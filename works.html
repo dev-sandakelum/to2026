@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[ Portfolio ] — Works</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-logo">[ Logo ]</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="works.html" class="active">Works</a></li>
+    <li><a href="apps.html">Apps</a></li>
+    <li><a href="notes.html">Notes</a></li>
+    <li><a href="quiz.html">Quiz</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="working.html">Working</a></li>
+  </ul>
+  <div class="nav-right" data-modal-open="modal-profile">[ Profile ]</div>
+  <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- Mobile Drawer -->
+<div class="nav-drawer">
+  <div class="nav-drawer-overlay"></div>
+  <div class="nav-drawer-panel">
+    <div class="nav-drawer-header">
+      <div class="nav-drawer-logo">[ Logo ]</div>
+      <button class="nav-drawer-close" aria-label="Close menu">✕</button>
+    </div>
+    <nav class="nav-drawer-links">
+      <a href="index.html">Home</a>
+      <a href="works.html" class="active">Works</a>
+      <a href="apps.html">Apps</a>
+      <a href="notes.html">Notes</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="blog.html">Blog</a>
+      <a href="working.html">Working</a>
+    </nav>
+    <div class="nav-drawer-footer">
+      <button class="nav-drawer-profile" data-modal-open="modal-profile">[ Profile / Admin ]</button>
+    </div>
+  </div>
+</div>
+
+<main>
+  <section class="section">
+    <div class="section-title">Works</div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar" data-target=".cards-grid">
+      <button class="filter-btn active" data-filter="all">[ All ]</button>
+      <button class="filter-btn" data-filter="web">[ Web ]</button>
+      <button class="filter-btn" data-filter="app">[ App ]</button>
+      <button class="filter-btn" data-filter="design">[ Design ]</button>
+      <button class="filter-btn" data-filter="other">[ Other ]</button>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="cards-grid">
+      <div class="card" data-category="web">
+        <div class="placeholder-img md">[ Image ]</div>
+        <div class="card-body">
+          <div class="card-title">[ Project Title ]</div>
+          <p class="card-text">[ Short description of the project. ]</p>
+          <div class="card-tags"><span class="tag">[ Web ]</span><span class="tag">[ Tag ]</span></div>
+          <a href="project.html"><button class="btn sm">[ View ]</button></a>
+        </div>
+      </div>
+      <div class="card" data-category="app">
+        <div class="placeholder-img md">[ Image ]</div>
+        <div class="card-body">
+          <div class="card-title">[ Project Title ]</div>
+          <p class="card-text">[ Short description of the project. ]</p>
+          <div class="card-tags"><span class="tag">[ App ]</span><span class="tag">[ Tag ]</span></div>
+          <a href="project.html"><button class="btn sm">[ View ]</button></a>
+        </div>
+      </div>
+      <div class="card" data-category="design">
+        <div class="placeholder-img md">[ Image ]</div>
+        <div class="card-body">
+          <div class="card-title">[ Project Title ]</div>
+          <p class="card-text">[ Short description of the project. ]</p>
+          <div class="card-tags"><span class="tag">[ Design ]</span><span class="tag">[ Tag ]</span></div>
+          <a href="project.html"><button class="btn sm">[ View ]</button></a>
+        </div>
+      </div>
+      <div class="card" data-category="web">
+        <div class="placeholder-img md">[ Image ]</div>
+        <div class="card-body">
+          <div class="card-title">[ Project Title ]</div>
+          <p class="card-text">[ Short description of the project. ]</p>
+          <div class="card-tags"><span class="tag">[ Web ]</span><span class="tag">[ Tag ]</span></div>
+          <a href="project.html"><button class="btn sm">[ View ]</button></a>
+        </div>
+      </div>
+      <div class="card" data-category="other">
+        <div class="placeholder-img md">[ Image ]</div>
+        <div class="card-body">
+          <div class="card-title">[ Project Title ]</div>
+          <p class="card-text">[ Short description of the project. ]</p>
+          <div class="card-tags"><span class="tag">[ Other ]</span><span class="tag">[ Tag ]</span></div>
+          <a href="project.html"><button class="btn sm">[ View ]</button></a>
+        </div>
+      </div>
+      <div class="card" data-category="app">
+        <div class="placeholder-img md">[ Image ]</div>
+        <div class="card-body">
+          <div class="card-title">[ Project Title ]</div>
+          <p class="card-text">[ Short description of the project. ]</p>
+          <div class="card-tags"><span class="tag">[ App ]</span><span class="tag">[ Tag ]</span></div>
+          <a href="project.html"><button class="btn sm">[ View ]</button></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="modal-overlay" id="modal-profile">
+  <div class="modal-box">
+    <div class="modal-header"><strong>[ Profile ]</strong><button class="modal-close">✕</button></div>
+    <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">[ User profile placeholder. ]</p>
+    <a href="admin.html"><button class="btn sm">[ Admin Panel ]</button></a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col"><h4>[ Brand ]</h4><a href="#">[ About ]</a><a href="#">[ Contact ]</a></div>
+    <div class="footer-col"><h4>[ Work ]</h4><a href="works.html">[ Works ]</a><a href="apps.html">[ Apps ]</a></div>
+    <div class="footer-col"><h4>[ Content ]</h4><a href="notes.html">[ Notes ]</a><a href="blog.html">[ Blog ]</a></div>
+    <div class="footer-col"><h4>[ Other ]</h4><a href="quiz.html">[ Quiz ]</a><a href="working.html">[ Working ]</a></div>
+  </div>
+  <div class="footer-bottom">[ Footer text · © 2024 · All rights reserved ]</div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

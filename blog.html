@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[ Portfolio ] — Blog</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-logo">[ Logo ]</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="works.html">Works</a></li>
+    <li><a href="apps.html">Apps</a></li>
+    <li><a href="notes.html">Notes</a></li>
+    <li><a href="quiz.html">Quiz</a></li>
+    <li><a href="blog.html" class="active">Blog</a></li>
+    <li><a href="working.html">Working</a></li>
+  </ul>
+  <div class="nav-right" data-modal-open="modal-profile">[ Profile ]</div>
+  <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- Mobile Drawer -->
+<div class="nav-drawer">
+  <div class="nav-drawer-overlay"></div>
+  <div class="nav-drawer-panel">
+    <div class="nav-drawer-header">
+      <div class="nav-drawer-logo">[ Logo ]</div>
+      <button class="nav-drawer-close" aria-label="Close menu">✕</button>
+    </div>
+    <nav class="nav-drawer-links">
+      <a href="index.html">Home</a>
+      <a href="works.html">Works</a>
+      <a href="apps.html">Apps</a>
+      <a href="notes.html">Notes</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="working.html">Working</a>
+    </nav>
+    <div class="nav-drawer-footer">
+      <button class="nav-drawer-profile" data-modal-open="modal-profile">[ Profile / Admin ]</button>
+    </div>
+  </div>
+</div>
+
+<main>
+  <section class="section">
+    <div class="section-title">Blog</div>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">[ All ]</button>
+      <button class="filter-btn" data-filter="tech">[ Tech ]</button>
+      <button class="filter-btn" data-filter="design">[ Design ]</button>
+      <button class="filter-btn" data-filter="life">[ Life ]</button>
+    </div>
+
+    <div class="blog-grid">
+
+      <div class="blog-card" data-category="tech">
+        <div class="placeholder-img md">[ Post Image ]</div>
+        <div class="card-body">
+          <div class="blog-meta">[ Jan 1, 2024 ] · [ 5 min read ]</div>
+          <div class="card-title">[ Blog Post Title ]</div>
+          <p class="card-text">[ Short excerpt from the blog post. A couple of sentences to give the reader a preview. ]</p>
+          <div class="card-tags"><span class="tag">[ Tech ]</span></div>
+          <a href="post.html"><button class="btn sm" style="margin-top:10px;">[ Read More ]</button></a>
+        </div>
+      </div>
+
+      <div class="blog-card" data-category="design">
+        <div class="placeholder-img md">[ Post Image ]</div>
+        <div class="card-body">
+          <div class="blog-meta">[ Feb 10, 2024 ] · [ 3 min read ]</div>
+          <div class="card-title">[ Blog Post Title ]</div>
+          <p class="card-text">[ Short excerpt from the blog post. A couple of sentences to give the reader a preview. ]</p>
+          <div class="card-tags"><span class="tag">[ Design ]</span></div>
+          <a href="post.html"><button class="btn sm" style="margin-top:10px;">[ Read More ]</button></a>
+        </div>
+      </div>
+
+      <div class="blog-card" data-category="life">
+        <div class="placeholder-img md">[ Post Image ]</div>
+        <div class="card-body">
+          <div class="blog-meta">[ Mar 5, 2024 ] · [ 7 min read ]</div>
+          <div class="card-title">[ Blog Post Title ]</div>
+          <p class="card-text">[ Short excerpt from the blog post. A couple of sentences to give the reader a preview. ]</p>
+          <div class="card-tags"><span class="tag">[ Life ]</span></div>
+          <a href="post.html"><button class="btn sm" style="margin-top:10px;">[ Read More ]</button></a>
+        </div>
+      </div>
+
+      <div class="blog-card" data-category="tech">
+        <div class="placeholder-img md">[ Post Image ]</div>
+        <div class="card-body">
+          <div class="blog-meta">[ Apr 20, 2024 ] · [ 4 min read ]</div>
+          <div class="card-title">[ Blog Post Title ]</div>
+          <p class="card-text">[ Short excerpt from the blog post. A couple of sentences to give the reader a preview. ]</p>
+          <div class="card-tags"><span class="tag">[ Tech ]</span></div>
+          <a href="post.html"><button class="btn sm" style="margin-top:10px;">[ Read More ]</button></a>
+        </div>
+      </div>
+
+      <div class="blog-card" data-category="design">
+        <div class="placeholder-img md">[ Post Image ]</div>
+        <div class="card-body">
+          <div class="blog-meta">[ May 15, 2024 ] · [ 6 min read ]</div>
+          <div class="card-title">[ Blog Post Title ]</div>
+          <p class="card-text">[ Short excerpt from the blog post. A couple of sentences to give the reader a preview. ]</p>
+          <div class="card-tags"><span class="tag">[ Design ]</span></div>
+          <a href="post.html"><button class="btn sm" style="margin-top:10px;">[ Read More ]</button></a>
+        </div>
+      </div>
+
+      <div class="blog-card" data-category="life">
+        <div class="placeholder-img md">[ Post Image ]</div>
+        <div class="card-body">
+          <div class="blog-meta">[ Jun 1, 2024 ] · [ 2 min read ]</div>
+          <div class="card-title">[ Blog Post Title ]</div>
+          <p class="card-text">[ Short excerpt from the blog post. A couple of sentences to give the reader a preview. ]</p>
+          <div class="card-tags"><span class="tag">[ Life ]</span></div>
+          <a href="post.html"><button class="btn sm" style="margin-top:10px;">[ Read More ]</button></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<div class="modal-overlay" id="modal-profile">
+  <div class="modal-box">
+    <div class="modal-header"><strong>[ Profile ]</strong><button class="modal-close">✕</button></div>
+    <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">[ User profile placeholder. ]</p>
+    <a href="admin.html"><button class="btn sm">[ Admin Panel ]</button></a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col"><h4>[ Brand ]</h4><a href="#">[ About ]</a><a href="#">[ Contact ]</a></div>
+    <div class="footer-col"><h4>[ Work ]</h4><a href="works.html">[ Works ]</a><a href="apps.html">[ Apps ]</a></div>
+    <div class="footer-col"><h4>[ Content ]</h4><a href="notes.html">[ Notes ]</a><a href="blog.html">[ Blog ]</a></div>
+    <div class="footer-col"><h4>[ Other ]</h4><a href="quiz.html">[ Quiz ]</a><a href="working.html">[ Working ]</a></div>
+  </div>
+  <div class="footer-bottom">[ Footer text · © 2024 · All rights reserved ]</div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

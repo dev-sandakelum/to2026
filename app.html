@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[ Portfolio ] — App</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-logo">[ Logo ]</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="works.html">Works</a></li>
+    <li><a href="apps.html" class="active">Apps</a></li>
+    <li><a href="notes.html">Notes</a></li>
+    <li><a href="quiz.html">Quiz</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="working.html">Working</a></li>
+  </ul>
+  <div class="nav-right" data-modal-open="modal-profile">[ Profile ]</div>
+  <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- Mobile Drawer -->
+<div class="nav-drawer">
+  <div class="nav-drawer-overlay"></div>
+  <div class="nav-drawer-panel">
+    <div class="nav-drawer-header">
+      <div class="nav-drawer-logo">[ Logo ]</div>
+      <button class="nav-drawer-close" aria-label="Close menu">✕</button>
+    </div>
+    <nav class="nav-drawer-links">
+      <a href="index.html">Home</a>
+      <a href="works.html">Works</a>
+      <a href="apps.html" class="active">Apps</a>
+      <a href="notes.html">Notes</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="blog.html">Blog</a>
+      <a href="working.html">Working</a>
+    </nav>
+    <div class="nav-drawer-footer">
+      <button class="nav-drawer-profile" data-modal-open="modal-profile">[ Profile / Admin ]</button>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <section class="section">
+    <div class="section-title">App</div>
+    <h1 style="font-size:20px;margin-bottom:6px;">[ App Title ]</h1>
+    <p style="font-size:13px;color:var(--text-muted);margin-bottom:20px;">[ Description of what this app does and how to use it. ]</p>
+
+    <div class="app-container">
+      <div class="app-inputs">
+        <div style="font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;color:var(--text-muted);">[ Input ]</div>
+        <div class="form-group">
+          <label>[ Field 1 ]</label>
+          <input type="text" placeholder="[ Enter value ]" />
+        </div>
+        <div class="form-group">
+          <label>[ Field 2 ]</label>
+          <input type="text" placeholder="[ Enter value ]" />
+        </div>
+        <div class="form-group">
+          <label>[ Field 3 ]</label>
+          <input type="text" placeholder="[ Enter value ]" />
+        </div>
+        <div style="display:flex;gap:8px;margin-top:8px;">
+          <button class="btn primary">[ Run ]</button>
+          <button class="btn">[ Reset ]</button>
+        </div>
+      </div>
+
+      <div class="app-output">
+        <div style="font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;color:var(--text-muted);">[ Output ]</div>
+        <div class="app-output-box">[ Result will appear here ]</div>
+        <div style="margin-top:12px;font-size:12px;color:var(--text-muted);">[ Additional output info or logs ]</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabs example -->
+  <section class="section">
+    <div class="section-title">Details</div>
+    <div class="tabs">
+      <div class="tab-list">
+        <button class="tab-btn active" data-tab="how">[ How to Use ]</button>
+        <button class="tab-btn" data-tab="about">[ About ]</button>
+        <button class="tab-btn" data-tab="changelog">[ Changelog ]</button>
+      </div>
+      <div class="tab-panel active" data-panel="how">
+        <p style="font-size:13px;color:var(--text-muted);line-height:1.6;">[ Instructions on how to use this app. Step by step guide placeholder. ]</p>
+      </div>
+      <div class="tab-panel" data-panel="about">
+        <p style="font-size:13px;color:var(--text-muted);line-height:1.6;">[ About this app. What it does, why it was built, tech used. ]</p>
+      </div>
+      <div class="tab-panel" data-panel="changelog">
+        <p style="font-size:13px;color:var(--text-muted);line-height:1.6;">[ v1.0 — Initial release. v1.1 — Bug fixes. v1.2 — New features. ]</p>
+      </div>
+    </div>
+  </section>
+
+  <a href="apps.html"><button class="btn">← [ Back to Apps ]</button></a>
+
+</main>
+
+<div class="modal-overlay" id="modal-profile">
+  <div class="modal-box">
+    <div class="modal-header"><strong>[ Profile ]</strong><button class="modal-close">✕</button></div>
+    <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">[ User profile placeholder. ]</p>
+    <a href="admin.html"><button class="btn sm">[ Admin Panel ]</button></a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col"><h4>[ Brand ]</h4><a href="#">[ About ]</a><a href="#">[ Contact ]</a></div>
+    <div class="footer-col"><h4>[ Work ]</h4><a href="works.html">[ Works ]</a><a href="apps.html">[ Apps ]</a></div>
+    <div class="footer-col"><h4>[ Content ]</h4><a href="notes.html">[ Notes ]</a><a href="blog.html">[ Blog ]</a></div>
+    <div class="footer-col"><h4>[ Other ]</h4><a href="quiz.html">[ Quiz ]</a><a href="working.html">[ Working ]</a></div>
+  </div>
+  <div class="footer-bottom">[ Footer text · © 2024 · All rights reserved ]</div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
