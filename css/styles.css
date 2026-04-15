@@ -1254,3 +1254,79 @@ footer {
   /* full width content */
   .note-layout { grid-template-columns: 1fr; }
 }
+
+/* ===== NOTE PAGE — MOBILE SPACE OPTIMISATION ===== */
+@media (max-width: 768px) {
+
+  /* strip outer page padding right down */
+  .page-note main {
+    padding: 8px 8px 80px; /* bottom clears the FAB */
+  }
+
+  /* section wrapper: tighter all round */
+  .page-note .section {
+    padding: 12px 12px;
+    margin-bottom: 10px;
+    border-radius: 0;          /* edge-to-edge feel */
+    border-left: none;
+    border-right: none;
+  }
+
+  /* section label row */
+  .page-note .section-title {
+    font-size: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+  }
+
+  /* note title */
+  .page-note .note-content h2 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  /* tags row */
+  .page-note .card-tags {
+    margin-bottom: 10px !important;
+  }
+
+  /* each content block: reduce padding, tighten gap */
+  .page-note .note-content .content-block {
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    border-left: 3px solid var(--border); /* left accent instead of full box */
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    background: var(--surface);
+  }
+
+  .page-note .note-content .content-block h3 {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .page-note .note-content .content-block p {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  /* FAB: slightly smaller so it takes less corner space */
+  .toc-fab {
+    bottom: 16px;
+    right: 12px;
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-note main {
+    padding: 6px 0 80px; /* zero horizontal — sections go full bleed */
+  }
+
+  .page-note .section {
+    padding: 10px 12px;
+    margin-bottom: 6px;
+  }
+}
