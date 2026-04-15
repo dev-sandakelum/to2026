@@ -503,6 +503,7 @@ footer {
 .search-bar { display: flex; gap: 8px; margin-bottom: 20px; }
 .search-bar input {
   flex: 1;
+  min-width: 0;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   padding: 10px 14px;
