@@ -1,0 +1,240 @@
+{
+  "site": {
+    "title": "",
+    "logo": "",
+    "footer_text": "",
+    "copyright_year": ""
+  },
+
+  "profile": {
+    "full_name": "",
+    "role": "",
+    "bio": "",
+    "avatar_url": "",
+    "email": "",
+    "location": "",
+    "social": {
+      "twitter": "",
+      "linkedin": "",
+      "github": "",
+      "website": ""
+    }
+  },
+
+  "skills": [
+    { "name": "" },
+    { "name": "" },
+    { "name": "" }
+  ],
+
+  "experience": [
+    {
+      "job_title": "",
+      "company": "",
+      "location": "",
+      "start_date": "",
+      "end_date": "",
+      "current": false,
+      "description": ""
+    }
+  ],
+
+  "projects": [
+    {
+      "id": "",
+      "title": "",
+      "slug": "",
+      "category": "",
+      "tags": [],
+      "description": "",
+      "hero_image": "",
+      "gallery": [],
+      "problem": "",
+      "solution": "",
+      "result": "",
+      "featured": false,
+      "url": ""
+    }
+  ],
+
+  "apps": [
+    {
+      "id": "",
+      "name": "",
+      "slug": "",
+      "icon": "",
+      "description": "",
+      "how_to_use": "",
+      "about": "",
+      "changelog": [
+        {
+          "version": "",
+          "notes": ""
+        }
+      ],
+      "fields": [
+        {
+          "label": "",
+          "type": "",
+          "placeholder": ""
+        }
+      ],
+      "status": ""
+    }
+  ],
+
+  "notes": [
+    {
+      "id": "",
+      "title": "",
+      "slug": "",
+      "category": "",
+      "tags": [],
+      "preview": "",
+      "created_at": "",
+      "updated_at": "",
+      "sections": [
+        {
+          "id": "",
+          "heading": "",
+          "content": ""
+        }
+      ]
+    }
+  ],
+
+  "blog": [
+    {
+      "id": "",
+      "title": "",
+      "slug": "",
+      "category": "",
+      "tags": [],
+      "excerpt": "",
+      "cover_image": "",
+      "published_at": "",
+      "read_time": "",
+      "status": "",
+      "sections": [
+        {
+          "id": "",
+          "heading": "",
+          "content": ""
+        }
+      ]
+    }
+  ],
+
+  "quiz": {
+    "hub": {
+      "title": "",
+      "description": "",
+      "total_categories": "",
+      "total_questions": ""
+    },
+    "categories": [
+      {
+        "id": "",
+        "title": "",
+        "slug": "",
+        "icon": "",
+        "group": "",
+        "difficulty": "",
+        "description": "",
+        "total_questions": "",
+        "progress": {
+          "answered": "",
+          "status": ""
+        }
+      }
+    ],
+    "quizzes": [
+      {
+        "id": "",
+        "category_id": "",
+        "question": "",
+        "options": [
+          { "label": "", "text": "" },
+          { "label": "", "text": "" },
+          { "label": "", "text": "" },
+          { "label": "", "text": "" }
+        ],
+        "answer_index": null,
+        "explanation": ""
+      }
+    ],
+    "results": [
+      {
+        "quiz_id": "",
+        "category_title": "",
+        "score": "",
+        "total": "",
+        "status": "",
+        "date": ""
+      }
+    ]
+  },
+
+  "working": {
+    "kanban": {
+      "todo": [
+        { "id": "", "title": "", "tags": [] }
+      ],
+      "in_progress": [
+        { "id": "", "title": "", "tags": [] }
+      ],
+      "done": [
+        { "id": "", "title": "", "tags": [] }
+      ]
+    },
+    "logs": [
+      {
+        "time": "",
+        "entry": ""
+      }
+    ],
+    "reading_list": [
+      {
+        "id": "",
+        "title": "",
+        "url": "",
+        "status": ""
+      }
+    ]
+  },
+
+  "admin": {
+    "settings": {
+      "site_title": "",
+      "email": "",
+      "bio": "",
+      "dark_mode": false,
+      "maintenance_mode": false,
+      "show_blog": true,
+      "show_apps": true
+    },
+    "dashboard": {
+      "total_apps": "",
+      "total_notes": "",
+      "total_posts": "",
+      "total_views": ""
+    },
+    "analytics": {
+      "visitors": "",
+      "avg_pages_per_visit": "",
+      "avg_time_on_site": "",
+      "bounce_rate": ""
+    }
+  },
+
+  "footer": {
+    "columns": [
+      {
+        "heading": "",
+        "links": [
+          { "label": "", "url": "" }
+        ]
+      }
+    ]
+  }
+}
