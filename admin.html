@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>[ Portfolio ] — Admin</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/admin.css" />
 </head>
-<body>
+<body class="page-admin">
 
 <nav class="navbar">
   <div class="nav-logo">[ Logo ]</div>
@@ -19,11 +20,11 @@
     <li><a href="blog.html">Blog</a></li>
     <li><a href="working.html">Working</a></li>
   </ul>
-  <div class="nav-right" style="background:var(--active);color:#fff;border-color:var(--active);">[ Admin ]</div>
+  <div class="nav-right admin-badge">[ Admin ]</div>
   <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- Mobile Drawer -->
+<!-- Site mobile drawer -->
 <div class="nav-drawer">
   <div class="nav-drawer-overlay"></div>
   <div class="nav-drawer-panel">
@@ -41,163 +42,358 @@
       <a href="working.html">Working</a>
     </nav>
     <div class="nav-drawer-footer">
-      <button class="nav-drawer-profile" style="background:var(--active);color:#fff;border-color:var(--active);">[ Admin Panel ]</button>
+      <button class="nav-drawer-profile admin-badge">[ Admin Panel ]</button>
     </div>
   </div>
 </div>
 
-<main>
-  <div class="admin-layout">
+<!-- ===== ADMIN SHELL ===== -->
+<div class="admin-shell">
 
-    <!-- Admin Sidebar -->
-    <aside class="admin-sidebar">
-      <div class="admin-sidebar-title">[ Admin Panel ]</div>
-      <nav class="admin-nav">
-        <a href="#dashboard" class="active">[ Dashboard ]</a>
-        <a href="#apps">[ Apps ]</a>
-        <a href="#notes">[ Notes ]</a>
-        <a href="#blog">[ Blog ]</a>
-        <a href="#analytics">[ Analytics ]</a>
-        <a href="#settings">[ Settings ]</a>
+  <!-- ===== ADMIN SIDEBAR (desktop sticky + mobile drawer) ===== -->
+  <aside class="admin-sidebar" id="admin-sidebar">
+    <div class="admin-sidebar-inner">
+
+      <div class="admin-sidebar-head">
+        <div class="admin-sidebar-brand">
+          <span class="admin-sidebar-icon">⚙</span>
+          <span>Admin Panel</span>
+        </div>
+        <button class="admin-sidebar-close" id="admin-sidebar-close" aria-label="Close">✕</button>
+      </div>
+
+      <nav class="admin-nav" id="admin-nav">
+        <a href="#dashboard"  class="admin-nav-item active" data-section="dashboard">
+          <span class="admin-nav-icon">📊</span> Dashboard
+        </a>
+        <a href="#apps"       class="admin-nav-item" data-section="apps">
+          <span class="admin-nav-icon">🧩</span> Apps
+        </a>
+        <a href="#notes"      class="admin-nav-item" data-section="notes">
+          <span class="admin-nav-icon">📝</span> Notes
+        </a>
+        <a href="#blog"       class="admin-nav-item" data-section="blog">
+          <span class="admin-nav-icon">✍️</span> Blog
+        </a>
+        <a href="#analytics"  class="admin-nav-item" data-section="analytics">
+          <span class="admin-nav-icon">📈</span> Analytics
+        </a>
+        <a href="#settings"   class="admin-nav-item" data-section="settings">
+          <span class="admin-nav-icon">🔧</span> Settings
+        </a>
       </nav>
-    </aside>
 
-    <!-- Admin Content -->
-    <div>
+      <div class="admin-sidebar-footer">
+        <a href="index.html" class="btn sm" style="width:100%;justify-content:center;">← Back to Site</a>
+      </div>
 
-      <!-- Stats -->
-      <section class="section" id="dashboard">
-        <div class="section-title">Dashboard</div>
-        <div class="stats-grid">
-          <div class="stat-card">
-            <div class="stat-num">[ 12 ]</div>
-            <div class="stat-label">[ Apps ]</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num">[ 48 ]</div>
-            <div class="stat-label">[ Notes ]</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num">[ 24 ]</div>
-            <div class="stat-label">[ Posts ]</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num">[ 1.2k ]</div>
-            <div class="stat-label">[ Views ]</div>
-          </div>
+    </div>
+  </aside>
+
+  <!-- Sidebar overlay (mobile) -->
+  <div class="admin-sidebar-overlay" id="admin-sidebar-overlay"></div>
+
+  <!-- ===== ADMIN CONTENT ===== -->
+  <div class="admin-content">
+
+    <!-- Mobile top bar -->
+    <div class="admin-topbar">
+      <button class="admin-menu-btn" id="admin-menu-btn" aria-label="Open admin menu">
+        <span></span><span></span><span></span>
+      </button>
+      <span class="admin-topbar-title" id="admin-topbar-title">Dashboard</span>
+      <button class="btn sm primary" data-modal-open="modal-add" id="admin-topbar-action" style="display:none;">+ Add</button>
+    </div>
+
+    <!-- ===== DASHBOARD ===== -->
+    <section class="admin-section active" id="dashboard">
+      <div class="admin-section-header">
+        <div>
+          <h2 class="admin-section-title">Dashboard</h2>
+          <p class="admin-section-sub">[ Overview of your portfolio content ]</p>
         </div>
-      </section>
+      </div>
 
-      <!-- Apps Table -->
-      <section class="section" id="apps">
-        <div class="section-title">Apps</div>
-        <div style="margin-bottom:12px;display:flex;justify-content:flex-end;">
-          <button class="btn sm primary" data-modal-open="modal-add">[ + Add App ]</button>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-num">[ 12 ]</div>
+          <div class="stat-label">[ Apps ]</div>
         </div>
+        <div class="stat-card">
+          <div class="stat-num">[ 48 ]</div>
+          <div class="stat-label">[ Notes ]</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">[ 24 ]</div>
+          <div class="stat-label">[ Posts ]</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">[ 1.2k ]</div>
+          <div class="stat-label">[ Views ]</div>
+        </div>
+      </div>
+
+      <!-- Quick links -->
+      <div class="admin-quick-grid">
+        <button class="admin-quick-card" data-goto="apps">
+          <span class="admin-quick-icon">🧩</span>
+          <span class="admin-quick-label">Manage Apps</span>
+          <span class="admin-quick-arrow">→</span>
+        </button>
+        <button class="admin-quick-card" data-goto="notes">
+          <span class="admin-quick-icon">📝</span>
+          <span class="admin-quick-label">Manage Notes</span>
+          <span class="admin-quick-arrow">→</span>
+        </button>
+        <button class="admin-quick-card" data-goto="blog">
+          <span class="admin-quick-icon">✍️</span>
+          <span class="admin-quick-label">Manage Blog</span>
+          <span class="admin-quick-arrow">→</span>
+        </button>
+        <button class="admin-quick-card" data-goto="analytics">
+          <span class="admin-quick-icon">📈</span>
+          <span class="admin-quick-label">View Analytics</span>
+          <span class="admin-quick-arrow">→</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ===== APPS ===== -->
+    <section class="admin-section" id="apps">
+      <div class="admin-section-header">
+        <div>
+          <h2 class="admin-section-title">Apps</h2>
+          <p class="admin-section-sub">[ Manage your mini apps ]</p>
+        </div>
+        <button class="btn sm primary" data-modal-open="modal-add">[ + Add App ]</button>
+      </div>
+
+      <!-- Desktop table -->
+      <div class="admin-table-wrap">
         <table class="data-table">
           <thead>
             <tr><th>[ Name ]</th><th>[ Status ]</th><th>[ Updated ]</th><th>[ Actions ]</th></tr>
           </thead>
           <tbody>
-            <tr><td>[ App Name ]</td><td><span class="tag">[ Active ]</span></td><td>[ Jan 1, 2024 ]</td><td><button class="btn sm">[ Edit ]</button> <button class="btn sm">[ Delete ]</button></td></tr>
-            <tr><td>[ App Name ]</td><td><span class="tag">[ Draft ]</span></td><td>[ Feb 5, 2024 ]</td><td><button class="btn sm">[ Edit ]</button> <button class="btn sm">[ Delete ]</button></td></tr>
-            <tr><td>[ App Name ]</td><td><span class="tag">[ Active ]</span></td><td>[ Mar 10, 2024 ]</td><td><button class="btn sm">[ Edit ]</button> <button class="btn sm">[ Delete ]</button></td></tr>
+            <tr>
+              <td>[ App Name ]</td>
+              <td><span class="tag">[ Active ]</span></td>
+              <td>[ Jan 1, 2024 ]</td>
+              <td class="admin-actions"><button class="btn sm">[ Edit ]</button><button class="btn sm">[ Delete ]</button></td>
+            </tr>
+            <tr>
+              <td>[ App Name ]</td>
+              <td><span class="tag tag-draft">[ Draft ]</span></td>
+              <td>[ Feb 5, 2024 ]</td>
+              <td class="admin-actions"><button class="btn sm">[ Edit ]</button><button class="btn sm">[ Delete ]</button></td>
+            </tr>
+            <tr>
+              <td>[ App Name ]</td>
+              <td><span class="tag">[ Active ]</span></td>
+              <td>[ Mar 10, 2024 ]</td>
+              <td class="admin-actions"><button class="btn sm">[ Edit ]</button><button class="btn sm">[ Delete ]</button></td>
+            </tr>
           </tbody>
         </table>
-      </section>
+      </div>
 
-      <!-- Notes Table -->
-      <section class="section" id="notes">
-        <div class="section-title">Notes</div>
-        <div style="margin-bottom:12px;display:flex;justify-content:flex-end;">
-          <button class="btn sm primary" data-modal-open="modal-add">[ + Add Note ]</button>
+      <!-- Mobile cards -->
+      <div class="admin-card-list">
+        <div class="admin-row-card">
+          <div class="admin-row-main">
+            <span class="admin-row-title">[ App Name ]</span>
+            <span class="tag">[ Active ]</span>
+          </div>
+          <div class="admin-row-meta">[ Jan 1, 2024 ]</div>
+          <div class="admin-row-actions"><button class="btn sm">[ Edit ]</button><button class="btn sm">[ Delete ]</button></div>
         </div>
+        <div class="admin-row-card">
+          <div class="admin-row-main">
+            <span class="admin-row-title">[ App Name ]</span>
+            <span class="tag tag-draft">[ Draft ]</span>
+          </div>
+          <div class="admin-row-meta">[ Feb 5, 2024 ]</div>
+          <div class="admin-row-actions"><button class="btn sm">[ Edit ]</button><button class="btn sm">[ Delete ]</button></div>
+        </div>
+        <div class="admin-row-card">
+          <div class="admin-row-main">
+            <span class="admin-row-title">[ App Name ]</span>
+            <span class="tag">[ Active ]</span>
+          </div>
+          <div class="admin-row-meta">[ Mar 10, 2024 ]</div>
+          <div class="admin-row-actions"><button class="btn sm">[ Edit ]</button><button class="btn sm">[ Delete ]</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== NOTES ===== -->
+    <section class="admin-section" id="notes">
+      <div class="admin-section-header">
+        <div>
+          <h2 class="admin-section-title">Notes</h2>
+          <p class="admin-section-sub">[ Manage your notes ]</p>
+        </div>
+        <button class="btn sm primary" data-modal-open="modal-add">[ + Add Note ]</button>
+      </div>
+
+      <div class="admin-table-wrap">
         <table class="data-table">
           <thead>
             <tr><th>[ Title ]</th><th>[ Tags ]</th><th>[ Date ]</th><th>[ Actions ]</th></tr>
           </thead>
           <tbody>
-            <tr><td>[ Note Title ]</td><td><span class="tag">[ Dev ]</span></td><td>[ Jan 1, 2024 ]</td><td><button class="btn sm">[ Edit ]</button> <button class="btn sm">[ Delete ]</button></td></tr>
-            <tr><td>[ Note Title ]</td><td><span class="tag">[ Design ]</span></td><td>[ Feb 5, 2024 ]</td><td><button class="btn sm">[ Edit ]</button> <button class="btn sm">[ Delete ]</button></td></tr>
-            <tr><td>[ Note Title ]</td><td><span class="tag">[ Ideas ]</span></td><td>[ Mar 10, 2024 ]</td><td><button class="btn sm">[ Edit ]</button> <button class="btn sm">[ Delete ]</button></td></tr>
+            <tr>
+              <td>[ Note Title ]</td>
+              <td><span class="tag">[ Dev ]</span></td>
+              <td>[ Jan 1, 2024 ]</td>
+              <td class="admin-actions"><button class="btn sm">[ Edit ]</button><button class="btn sm">[ Delete ]</button></td>
+            </tr>
+            <tr>
+              <td>[ Note Title ]</td>
+              <td><span class="tag">[ Design ]</span></td>
+              <td>[ Feb 5, 2024 ]</td>
+              <td class="admin-actions"><button class="btn sm">[ Edit ]</button><button class="btn sm">[ Delete ]</button></td>
+            </tr>
+            <tr>
+              <td>[ Note Title ]</td>
+              <td><span class="tag">[ Ideas ]</span></td>
+              <td>[ Mar 10, 2024 ]</td>
+              <td class="admin-actions"><button class="btn sm">[ Edit ]</button><button class="btn sm">[ Delete ]</button></td>
+            </tr>
           </tbody>
         </table>
-      </section>
+      </div>
 
-      <!-- Blog Table -->
-      <section class="section" id="blog">
-        <div class="section-title">Blog</div>
-        <div style="margin-bottom:12px;display:flex;justify-content:flex-end;">
-          <button class="btn sm primary" data-modal-open="modal-add">[ + New Post ]</button>
+      <div class="admin-card-list">
+        <div class="admin-row-card">
+          <div class="admin-row-main"><span class="admin-row-title">[ Note Title ]</span><span class="tag">[ Dev ]</span></div>
+          <div class="admin-row-meta">[ Jan 1, 2024 ]</div>
+          <div class="admin-row-actions"><button class="btn sm">[ Edit ]</button><button class="btn sm">[ Delete ]</button></div>
         </div>
+        <div class="admin-row-card">
+          <div class="admin-row-main"><span class="admin-row-title">[ Note Title ]</span><span class="tag">[ Design ]</span></div>
+          <div class="admin-row-meta">[ Feb 5, 2024 ]</div>
+          <div class="admin-row-actions"><button class="btn sm">[ Edit ]</button><button class="btn sm">[ Delete ]</button></div>
+        </div>
+        <div class="admin-row-card">
+          <div class="admin-row-main"><span class="admin-row-title">[ Note Title ]</span><span class="tag">[ Ideas ]</span></div>
+          <div class="admin-row-meta">[ Mar 10, 2024 ]</div>
+          <div class="admin-row-actions"><button class="btn sm">[ Edit ]</button><button class="btn sm">[ Delete ]</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BLOG ===== -->
+    <section class="admin-section" id="blog">
+      <div class="admin-section-header">
+        <div>
+          <h2 class="admin-section-title">Blog</h2>
+          <p class="admin-section-sub">[ Manage your blog posts ]</p>
+        </div>
+        <button class="btn sm primary" data-modal-open="modal-add">[ + New Post ]</button>
+      </div>
+
+      <div class="admin-table-wrap">
         <table class="data-table">
           <thead>
             <tr><th>[ Title ]</th><th>[ Status ]</th><th>[ Date ]</th><th>[ Actions ]</th></tr>
           </thead>
           <tbody>
-            <tr><td>[ Post Title ]</td><td><span class="tag">[ Published ]</span></td><td>[ Jan 1, 2024 ]</td><td><button class="btn sm">[ Edit ]</button> <button class="btn sm">[ Delete ]</button></td></tr>
-            <tr><td>[ Post Title ]</td><td><span class="tag">[ Draft ]</span></td><td>[ Feb 5, 2024 ]</td><td><button class="btn sm">[ Edit ]</button> <button class="btn sm">[ Delete ]</button></td></tr>
-            <tr><td>[ Post Title ]</td><td><span class="tag">[ Published ]</span></td><td>[ Mar 10, 2024 ]</td><td><button class="btn sm">[ Edit ]</button> <button class="btn sm">[ Delete ]</button></td></tr>
+            <tr>
+              <td>[ Post Title ]</td>
+              <td><span class="tag">[ Published ]</span></td>
+              <td>[ Jan 1, 2024 ]</td>
+              <td class="admin-actions"><button class="btn sm">[ Edit ]</button><button class="btn sm">[ Delete ]</button></td>
+            </tr>
+            <tr>
+              <td>[ Post Title ]</td>
+              <td><span class="tag tag-draft">[ Draft ]</span></td>
+              <td>[ Feb 5, 2024 ]</td>
+              <td class="admin-actions"><button class="btn sm">[ Edit ]</button><button class="btn sm">[ Delete ]</button></td>
+            </tr>
+            <tr>
+              <td>[ Post Title ]</td>
+              <td><span class="tag">[ Published ]</span></td>
+              <td>[ Mar 10, 2024 ]</td>
+              <td class="admin-actions"><button class="btn sm">[ Edit ]</button><button class="btn sm">[ Delete ]</button></td>
+            </tr>
           </tbody>
         </table>
-      </section>
+      </div>
 
-      <!-- Analytics -->
-      <section class="section" id="analytics">
-        <div class="section-title">Analytics</div>
-        <div class="stats-grid">
-          <div class="stat-card"><div class="stat-num">[ 320 ]</div><div class="stat-label">[ Visitors ]</div></div>
-          <div class="stat-card"><div class="stat-num">[ 5.2 ]</div><div class="stat-label">[ Avg. Pages ]</div></div>
-          <div class="stat-card"><div class="stat-num">[ 2:30 ]</div><div class="stat-label">[ Avg. Time ]</div></div>
-          <div class="stat-card"><div class="stat-num">[ 42% ]</div><div class="stat-label">[ Bounce Rate ]</div></div>
+      <div class="admin-card-list">
+        <div class="admin-row-card">
+          <div class="admin-row-main"><span class="admin-row-title">[ Post Title ]</span><span class="tag">[ Published ]</span></div>
+          <div class="admin-row-meta">[ Jan 1, 2024 ]</div>
+          <div class="admin-row-actions"><button class="btn sm">[ Edit ]</button><button class="btn sm">[ Delete ]</button></div>
         </div>
-        <div class="placeholder-img lg" style="margin-top:0;">[ Analytics Chart Placeholder ]</div>
-      </section>
-
-      <!-- Settings -->
-      <section class="section" id="settings">
-        <div class="section-title">Settings</div>
-        <div style="max-width:480px;">
-          <div class="form-group">
-            <label>[ Site Title ]</label>
-            <input type="text" placeholder="[ My Portfolio ]" />
-          </div>
-          <div class="form-group">
-            <label>[ Email ]</label>
-            <input type="email" placeholder="[ email@example.com ]" />
-          </div>
-          <div class="form-group">
-            <label>[ Bio ]</label>
-            <textarea rows="3" placeholder="[ Short bio... ]"></textarea>
-          </div>
-
-          <div style="margin-bottom:20px;">
-            <div style="font-size:12px;color:var(--text-muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;">[ Toggles ]</div>
-            <div class="toggle-wrap">
-              <div class="toggle on"></div>
-              <span style="font-size:13px;">[ Dark Mode ]</span>
-            </div>
-            <div class="toggle-wrap">
-              <div class="toggle"></div>
-              <span style="font-size:13px;">[ Maintenance Mode ]</span>
-            </div>
-            <div class="toggle-wrap">
-              <div class="toggle on"></div>
-              <span style="font-size:13px;">[ Show Blog ]</span>
-            </div>
-            <div class="toggle-wrap">
-              <div class="toggle on"></div>
-              <span style="font-size:13px;">[ Show Apps ]</span>
-            </div>
-          </div>
-
-          <button class="btn primary">[ Save Settings ]</button>
+        <div class="admin-row-card">
+          <div class="admin-row-main"><span class="admin-row-title">[ Post Title ]</span><span class="tag tag-draft">[ Draft ]</span></div>
+          <div class="admin-row-meta">[ Feb 5, 2024 ]</div>
+          <div class="admin-row-actions"><button class="btn sm">[ Edit ]</button><button class="btn sm">[ Delete ]</button></div>
         </div>
-      </section>
+        <div class="admin-row-card">
+          <div class="admin-row-main"><span class="admin-row-title">[ Post Title ]</span><span class="tag">[ Published ]</span></div>
+          <div class="admin-row-meta">[ Mar 10, 2024 ]</div>
+          <div class="admin-row-actions"><button class="btn sm">[ Edit ]</button><button class="btn sm">[ Delete ]</button></div>
+        </div>
+      </div>
+    </section>
 
-    </div>
-  </div>
-</main>
+    <!-- ===== ANALYTICS ===== -->
+    <section class="admin-section" id="analytics">
+      <div class="admin-section-header">
+        <div>
+          <h2 class="admin-section-title">Analytics</h2>
+          <p class="admin-section-sub">[ Site traffic and engagement ]</p>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-num">[ 320 ]</div><div class="stat-label">[ Visitors ]</div></div>
+        <div class="stat-card"><div class="stat-num">[ 5.2 ]</div><div class="stat-label">[ Avg. Pages ]</div></div>
+        <div class="stat-card"><div class="stat-num">[ 2:30 ]</div><div class="stat-label">[ Avg. Time ]</div></div>
+        <div class="stat-card"><div class="stat-num">[ 42% ]</div><div class="stat-label">[ Bounce Rate ]</div></div>
+      </div>
+
+      <div class="section" style="margin-top:0;">
+        <div class="section-title">Traffic Chart</div>
+        <div class="placeholder-img lg">[ Analytics Chart Placeholder ]</div>
+      </div>
+    </section>
+
+    <!-- ===== SETTINGS ===== -->
+    <section class="admin-section" id="settings">
+      <div class="admin-section-header">
+        <div>
+          <h2 class="admin-section-title">Settings</h2>
+          <p class="admin-section-sub">[ Site configuration ]</p>
+        </div>
+      </div>
+
+      <div class="admin-settings-grid">
+        <div class="section">
+          <div class="section-title">Profile</div>
+          <div class="form-group"><label>[ Site Title ]</label><input type="text" placeholder="[ My Portfolio ]" /></div>
+          <div class="form-group"><label>[ Email ]</label><input type="email" placeholder="[ email@example.com ]" /></div>
+          <div class="form-group"><label>[ Bio ]</label><textarea rows="3" placeholder="[ Short bio... ]"></textarea></div>
+          <button class="btn primary">[ Save Profile ]</button>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Visibility</div>
+          <div class="toggle-wrap"><div class="toggle on"></div><span>[ Show Blog ]</span></div>
+          <div class="toggle-wrap"><div class="toggle on"></div><span>[ Show Apps ]</span></div>
+          <div class="toggle-wrap"><div class="toggle on"></div><span>[ Show Notes ]</span></div>
+          <div class="toggle-wrap"><div class="toggle"></div><span>[ Maintenance Mode ]</span></div>
+          <div class="toggle-wrap"><div class="toggle on"></div><span>[ Dark Mode ]</span></div>
+          <button class="btn primary" style="margin-top:8px;">[ Save ]</button>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /admin-content -->
+</div><!-- /admin-shell -->
 
 <!-- Add Modal -->
 <div class="modal-overlay" id="modal-add">
@@ -224,5 +420,60 @@
 
 <script src="js/main.js"></script>
 <script src="js/settings.js"></script>
+<script>
+// ===== ADMIN SIDEBAR =====
+const adminSidebar  = document.getElementById('admin-sidebar');
+const adminOverlay  = document.getElementById('admin-sidebar-overlay');
+const adminMenuBtn  = document.getElementById('admin-menu-btn');
+const adminCloseBtn = document.getElementById('admin-sidebar-close');
+
+function openAdminSidebar() {
+  adminSidebar.classList.add('open');
+  adminOverlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeAdminSidebar() {
+  adminSidebar.classList.remove('open');
+  adminOverlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+adminMenuBtn?.addEventListener('click', openAdminSidebar);
+adminCloseBtn?.addEventListener('click', closeAdminSidebar);
+adminOverlay?.addEventListener('click', closeAdminSidebar);
+
+// ===== SECTION SWITCHING =====
+const sections   = document.querySelectorAll('.admin-section');
+const navItems   = document.querySelectorAll('.admin-nav-item');
+const topbarTitle = document.getElementById('admin-topbar-title');
+const topbarAction = document.getElementById('admin-topbar-action');
+
+const sectionLabels = {
+  dashboard: 'Dashboard', apps: 'Apps', notes: 'Notes',
+  blog: 'Blog', analytics: 'Analytics', settings: 'Settings'
+};
+const sectionActions = { apps: true, notes: true, blog: true };
+
+function switchSection(id) {
+  sections.forEach(s => s.classList.toggle('active', s.id === id));
+  navItems.forEach(a => a.classList.toggle('active', a.dataset.section === id));
+  if (topbarTitle) topbarTitle.textContent = sectionLabels[id] || id;
+  if (topbarAction) topbarAction.style.display = sectionActions[id] ? '' : 'none';
+  closeAdminSidebar();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+navItems.forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    switchSection(a.dataset.section);
+  });
+});
+
+// Quick cards on dashboard
+document.querySelectorAll('[data-goto]').forEach(btn => {
+  btn.addEventListener('click', () => switchSection(btn.dataset.goto));
+});
+</script>
 </body>
 </html>

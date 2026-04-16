@@ -1,0 +1,357 @@
+/* ===== ADMIN LAYOUT ===== */
+
+/* Remove default main padding for admin — shell handles it */
+.page-admin main { display: none; } /* admin uses .admin-shell instead */
+
+.admin-badge {
+  background: var(--accent) !important;
+  color: #fff !important;
+  border-color: var(--accent) !important;
+  font-weight: 600;
+}
+
+/* Shell = full-width row below navbar */
+.admin-shell {
+  display: flex;
+  min-height: calc(100vh - 60px);
+  position: relative;
+}
+
+/* ===== SIDEBAR ===== */
+.admin-sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 60px;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+  z-index: 50;
+  transition: transform 0.25s ease;
+}
+
+.admin-sidebar-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.admin-sidebar-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.admin-sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.admin-sidebar-icon { font-size: 16px; }
+
+.admin-sidebar-close {
+  display: none; /* shown only on mobile */
+  border: 1px solid var(--border);
+  background: none;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  transition: all var(--transition);
+}
+.admin-sidebar-close:hover { background: var(--surface-2); }
+
+/* Nav items */
+.admin-nav {
+  flex: 1;
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.admin-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition);
+  text-decoration: none;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+}
+.admin-nav-item:hover { background: var(--surface-2); color: var(--text); }
+.admin-nav-item.active {
+  background: var(--accent-light);
+  color: var(--accent);
+  font-weight: 600;
+}
+.admin-nav-icon { font-size: 15px; flex-shrink: 0; }
+
+.admin-sidebar-footer {
+  padding: 14px 16px;
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+/* Sidebar overlay (mobile only) */
+.admin-sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15,23,42,0.45);
+  z-index: 49;
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.admin-sidebar-overlay.open { opacity: 1; }
+
+/* ===== CONTENT AREA ===== */
+.admin-content {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mobile top bar (hidden on desktop) */
+.admin-topbar {
+  display: none;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 60px;
+  z-index: 40;
+}
+
+.admin-menu-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 7px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.admin-menu-btn span {
+  display: block;
+  width: 16px;
+  height: 2px;
+  background: var(--text-muted);
+  border-radius: 2px;
+}
+
+.admin-topbar-title {
+  flex: 1;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* ===== SECTIONS ===== */
+.admin-section {
+  display: none;
+  padding: 28px 28px;
+  flex-direction: column;
+  gap: 20px;
+}
+.admin-section.active { display: flex; }
+
+.admin-section-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.admin-section-title {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.admin-section-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ===== QUICK CARDS (dashboard) ===== */
+.admin-quick-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.admin-quick-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all var(--transition);
+  text-align: left;
+  box-shadow: var(--shadow-sm);
+}
+.admin-quick-card:hover {
+  border-color: var(--accent-mid);
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
+}
+.admin-quick-icon { font-size: 20px; flex-shrink: 0; }
+.admin-quick-label { flex: 1; font-size: 13px; font-weight: 600; color: var(--text); }
+.admin-quick-arrow { font-size: 14px; color: var(--text-light); transition: transform var(--transition); }
+.admin-quick-card:hover .admin-quick-arrow { transform: translateX(3px); color: var(--accent); }
+
+/* ===== TABLE WRAPPER ===== */
+.admin-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+.admin-table-wrap .data-table { margin: 0; }
+.admin-table-wrap .data-table th:first-child,
+.admin-table-wrap .data-table td:first-child { border-radius: var(--radius) 0 0 0; }
+
+.admin-actions { display: flex; gap: 6px; white-space: nowrap; }
+
+/* Draft tag variant */
+.tag.tag-draft {
+  background: var(--surface-2);
+  color: var(--text-muted);
+  border-color: var(--border);
+}
+
+/* ===== MOBILE CARD LIST (replaces table on small screens) ===== */
+.admin-card-list {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-row-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.admin-row-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.admin-row-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.admin-row-meta {
+  font-size: 12px;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.admin-row-actions {
+  display: flex;
+  gap: 8px;
+  padding-top: 4px;
+  border-top: 1px solid var(--border-soft);
+}
+
+/* ===== SETTINGS GRID ===== */
+.admin-settings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  /* Sidebar becomes a slide-in drawer */
+  .admin-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transform: translateX(-100%);
+    z-index: 50;
+    box-shadow: var(--shadow-lg);
+  }
+  .admin-sidebar.open { transform: translateX(0); }
+  .admin-sidebar-overlay { display: block; pointer-events: none; }
+  .admin-sidebar-overlay.open { pointer-events: all; }
+  .admin-sidebar-close { display: flex; }
+
+  /* Show mobile topbar */
+  .admin-topbar { display: flex; }
+
+  /* Content full width */
+  .admin-content { width: 100%; }
+
+  .admin-section { padding: 20px 16px; }
+
+  /* Hide table, show cards */
+  .admin-table-wrap { display: none; }
+  .admin-card-list { display: flex; }
+
+  .admin-settings-grid { grid-template-columns: 1fr; }
+  .admin-quick-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .admin-section { padding: 14px 12px; gap: 14px; }
+  .admin-quick-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .admin-sidebar {
+  background: var(--surface);
+  border-right-color: var(--border);
+}
+[data-theme="dark"] .admin-topbar {
+  background: var(--surface);
+  border-bottom-color: var(--border);
+}
+[data-theme="dark"] .admin-row-card { background: var(--surface); }
+[data-theme="dark"] .admin-quick-card { background: var(--surface); }

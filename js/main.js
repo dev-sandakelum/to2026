@@ -153,3 +153,36 @@ document.querySelectorAll('[data-dropdown]').forEach(btn => {
 document.addEventListener('click', () => {
   document.querySelectorAll('.dropdown-menu.open').forEach(m => m.classList.remove('open'));
 });
+
+
+// ===== BOTTOM TAB BAR =====
+(function () {
+  const tabs = [
+    { href: 'index.html',   icon: '🏠', label: 'Home'    },
+    { href: 'works.html',   icon: '🗂️', label: 'Works'   },
+    { href: 'apps.html',    icon: '🧩', label: 'Apps'    },
+    { href: 'notes.html',   icon: '📝', label: 'Notes'   },
+    { href: 'blog.html',    icon: '✍️', label: 'Blog'    },
+    { href: 'quiz.html',    icon: '🧠', label: 'Quiz'    },
+    { href: 'working.html', icon: '🔭', label: 'Working' },
+  ];
+
+  const bar = document.createElement('nav');
+  bar.className = 'bottom-tab-bar';
+  bar.setAttribute('aria-label', 'Main navigation');
+
+  const currentPage = location.pathname.split('/').pop() || 'index.html';
+
+  tabs.forEach(t => {
+    const a = document.createElement('a');
+    a.href = t.href;
+    a.className = 'tab-bar-item';
+    if (t.href === currentPage || (currentPage === '' && t.href === 'index.html')) {
+      a.classList.add('active');
+    }
+    a.innerHTML = `<span class="tab-bar-icon">${t.icon}</span><span class="tab-bar-label">${t.label}</span>`;
+    bar.appendChild(a);
+  });
+
+  document.body.appendChild(bar);
+})();

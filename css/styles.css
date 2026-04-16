@@ -35,12 +35,19 @@ body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background: var(--bg);
   color: var(--text);
-  min-height: 100vh;
+  height: 100dvh;
+  overflow: hidden;          /* app shell — inner areas scroll */
   display: flex;
   flex-direction: column;
   font-size: 15px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+}
+
+/* body scrolls normally on desktop, only lock on mobile if needed */
+@media (min-width: 769px) {
+  body { height: auto; overflow: visible; }
+  main { overflow: visible; padding-bottom: 40px; }
 }
 
 a { color: inherit; text-decoration: none; }
@@ -246,51 +253,17 @@ button { cursor: pointer; font-family: inherit; }
 /* ===== MAIN & LAYOUT ===== */
 main {
   flex: 1;
-  padding: 32px 28px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 28px 28px 80px;   /* bottom clears mobile tab bar */
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+  /* safe area for notched phones */
+  padding-bottom: max(80px, calc(64px + env(safe-area-inset-bottom)));
 }
 
-/* ===== FOOTER ===== */
-footer {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  padding: 40px 28px 24px;
-  margin-top: auto;
-}
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
-  max-width: 1200px;
-  margin: 0 auto 24px;
-}
-.footer-col h4 {
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: var(--text-light);
-  margin-bottom: 14px;
-}
-.footer-col a {
-  display: block;
-  font-size: 13px;
-  color: var(--text-muted);
-  margin-bottom: 8px;
-  transition: color var(--transition);
-}
-.footer-col a:hover { color: var(--accent); }
-.footer-bottom {
-  text-align: center;
-  font-size: 12px;
-  color: var(--text-light);
-  border-top: 1px solid var(--border);
-  padding-top: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+/* footer removed */
 
 /* ===== SECTION ===== */
 .section {
@@ -1313,7 +1286,7 @@ footer {
   .nav-toggle { display: flex; }
   .nav-drawer { display: block; }
 
-  main { padding: 20px 16px; }
+  main { padding: 20px 16px 80px; }
 
   .cards-grid, .blog-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1326,7 +1299,7 @@ footer {
 }
 
 @media (max-width: 540px) {
-  main { padding: 14px 12px; }
+  main { padding: 14px 12px 80px; }
   .navbar { padding: 0 16px; }
 
   .cards-grid, .blog-grid, .project-blocks,
@@ -1402,8 +1375,6 @@ footer {
 [data-theme="dark"] .data-table th { background: #273549; }
 [data-theme="dark"] .data-table tr:hover td { background: #273549; }
 
-[data-theme="dark"] footer { background: #1E293B; border-top-color: #334155; }
-
 /* ===== HIGH CONTRAST THEME ===== */
 [data-theme="contrast"] {
   --bg:          #000000;
@@ -1442,6 +1413,8 @@ footer {
 }
 
 [data-theme="contrast"] footer { background: #111; border-top: 2px solid #fff; }
+
+/* placeholder so contrast theme block stays intact */
 
 /* ===== SETTINGS PANEL ===== */
 .nav-settings-btn {
@@ -1693,4 +1666,190 @@ footer {
     from { transform: translateY(100%); }
     to   { transform: translateY(0); }
   }
+}
+
+/* ============================================================
+   APP VIBE — shell, scrollbars, bottom tab bar, transitions
+   ============================================================ */
+
+/* Thin custom scrollbar on the main scroll area */
+main::-webkit-scrollbar { width: 4px; }
+main::-webkit-scrollbar-track { background: transparent; }
+main::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
+main::-webkit-scrollbar-thumb:hover { background: var(--text-light); }
+
+/* Navbar — tighter, more app-like */
+.navbar {
+  height: 56px;
+  padding: 0 20px;
+  flex-shrink: 0;             /* never shrink in the flex column */
+}
+
+/* Active nav link gets a small bottom indicator */
+.nav-links a.active {
+  position: relative;
+}
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 99px;
+}
+
+/* ===== BOTTOM TAB BAR (mobile) ===== */
+.bottom-tab-bar {
+  display: none;              /* shown only on mobile via media query */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 90;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--border);
+  padding: 6px 4px;
+  padding-bottom: max(6px, env(safe-area-inset-bottom));
+  display: none;
+  align-items: stretch;
+  justify-content: space-around;
+  gap: 2px;
+}
+
+.tab-bar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  flex: 1;
+  padding: 6px 4px;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: none;
+  color: var(--text-light);
+  font-size: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition);
+  cursor: pointer;
+  min-width: 0;
+}
+
+.tab-bar-item:hover { color: var(--text-muted); }
+
+.tab-bar-item.active {
+  color: var(--accent);
+}
+
+.tab-bar-icon {
+  font-size: 18px;
+  line-height: 1;
+  display: block;
+}
+
+.tab-bar-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* Active dot indicator */
+.tab-bar-item.active .tab-bar-icon {
+  position: relative;
+}
+.tab-bar-item.active .tab-bar-icon::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* ===== PAGE TRANSITION FEEL ===== */
+main {
+  animation: pageIn 0.18s ease both;
+}
+
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== SECTION — app card feel ===== */
+.section {
+  border-radius: var(--radius-lg);  /* rounder = more app-like */
+}
+
+/* ===== CARDS — lift on hover ===== */
+.card, .note-card, .blog-card, .quiz-cat-card {
+  transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+/* ===== INPUTS — app feel ===== */
+.form-group input,
+.form-group textarea,
+.search-bar input {
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  border-color: transparent;
+  transition: background var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.search-bar input:focus {
+  background: var(--surface);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+}
+
+/* ===== BUTTONS — pill style ===== */
+.btn {
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.1px;
+}
+.btn.primary {
+  box-shadow: 0 2px 8px rgba(37,99,235,0.25);
+}
+.btn.primary:hover {
+  box-shadow: 0 4px 14px rgba(37,99,235,0.35);
+  transform: translateY(-1px);
+}
+
+/* ===== DARK THEME — bottom tab bar ===== */
+[data-theme="dark"] .bottom-tab-bar {
+  background: rgba(15,23,42,0.92);
+  border-top-color: #334155;
+}
+
+/* ===== CONTRAST THEME — bottom tab bar ===== */
+[data-theme="contrast"] .bottom-tab-bar {
+  background: #000;
+  border-top: 2px solid #fff;
+}
+[data-theme="contrast"] .tab-bar-item.active { color: #FFD700; }
+[data-theme="contrast"] .tab-bar-item.active .tab-bar-icon::after { background: #FFD700; }
+
+/* ===== SHOW TAB BAR ON MOBILE ===== */
+@media (max-width: 768px) {
+  .bottom-tab-bar { display: flex; }
+
+  /* hide the desktop nav links on mobile (already hidden, but reinforce) */
+  .nav-links { display: none; }
+  .nav-right  { display: none; }
+  .nav-toggle { display: flex; }
+  .nav-drawer { display: block; }
 }
