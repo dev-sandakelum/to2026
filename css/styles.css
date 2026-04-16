@@ -1980,3 +1980,131 @@ main {
   .nav-toggle { display: flex; }
   .nav-drawer { display: block; }
 }
+
+/* ===== POST PAGE ===== */
+.post-article {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* Cover image — bleeds to main edges */
+.post-cover {
+  margin: 0 -28px 0;   /* negative margin cancels main padding */
+  overflow: hidden;
+}
+
+.post-cover-img {
+  height: 340px;
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+}
+
+.post-body {
+  padding-top: 24px;
+}
+
+/* Meta row */
+.post-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.post-meta-dot { color: var(--text-light); font-size: 12px; }
+.post-date, .post-read-time {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/* Title */
+.post-title {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+  line-height: 1.25;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+/* Content — clean readable prose */
+.post-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+.post-content p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+/* Action bar */
+.post-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+/* Share toast */
+.post-share-toast {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 8px 14px;
+  background: var(--accent-light);
+  color: var(--accent);
+  border: 1px solid var(--accent-mid);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s, transform 0.2s;
+  pointer-events: none;
+}
+.post-share-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 768px) {
+  .post-cover { margin: 0 -10px 0; }
+  .post-cover-img { height: 220px; }
+  .post-title { font-size: 20px; }
+  .post-content p { font-size: 14px; }
+  .post-body { padding-top: 16px; }
+}
+
+@media (max-width: 480px) {
+  .post-cover { margin: 0; }   /* already edge-to-edge at 0 main padding */
+  .post-cover-img { height: 190px; }
+  .post-title { font-size: 18px; }
+  .post-actions { flex-wrap: wrap; }
+  .post-actions .btn { flex: 1; justify-content: center; }
+}
+
+/* ===== HIDE BOTTOM TAB BAR on reading pages ===== */
+@media (max-width: 768px) {
+  .page-note .bottom-tab-bar,
+  .page-post .bottom-tab-bar {
+    display: none !important;
+  }
+
+  /* reclaim the bottom padding that was reserved for the tab bar */
+  .page-note main,
+  .page-post main {
+    padding-bottom: 20px !important;
+  }
+}

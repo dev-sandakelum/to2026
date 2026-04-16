@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>[ Portfolio ] — Post</title>
+  <title>[ Blog Post Title ] — Portfolio</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body>
+<body class="page-post">
 
 <nav class="navbar">
   <div class="nav-logo">[ Logo ]</div>
@@ -23,7 +23,6 @@
   <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- Mobile Drawer -->
 <div class="nav-drawer">
   <div class="nav-drawer-overlay"></div>
   <div class="nav-drawer-panel">
@@ -47,52 +46,52 @@
 </div>
 
 <main>
-  <div class="post-layout">
+  <article class="post-article">
 
-    <!-- Post Content -->
-    <article class="post-content section">
-      <div class="section-title">Post</div>
-      <h1>[ Blog Post Title ]</h1>
-      <div class="post-meta">[ Jan 1, 2024 ] · [ 5 min read ] · [ Category ]</div>
-
-      <div class="placeholder-img lg" style="margin-bottom:20px;">[ Hero Image ]</div>
-
-      <div class="para-block">[ Introduction paragraph. Set the scene, introduce the topic, and hook the reader. This is placeholder text for the opening of the blog post. ]</div>
-      <div class="para-block">[ Second paragraph. Dive deeper into the topic. Provide context, background, or supporting information. ]</div>
-      <div class="para-block">[ Third paragraph. Main content section. This is where the core argument or information is presented. ]</div>
-      <div class="para-block">[ Fourth paragraph. Supporting details, examples, or case studies. ]</div>
-      <div class="para-block">[ Conclusion paragraph. Wrap up the post, summarize key points, and provide a call to action or closing thought. ]</div>
-
-      <div style="margin-top:16px;display:flex;gap:8px;">
-        <a href="blog.html"><button class="btn">← [ Back to Blog ]</button></a>
-        <button class="btn" data-modal-open="modal-share">[ Share ]</button>
-      </div>
-    </article>
-
-    <!-- Sidebar TOC -->
-    <aside class="post-sidebar">
-      <h4 style="font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">[ Contents ]</h4>
-      <a href="#" style="display:block;font-size:12px;padding:5px 0;border-bottom:1px solid var(--border);color:var(--text-muted);">[ Introduction ]</a>
-      <a href="#" style="display:block;font-size:12px;padding:5px 0;border-bottom:1px solid var(--border);color:var(--text-muted);">[ Section 1 ]</a>
-      <a href="#" style="display:block;font-size:12px;padding:5px 0;border-bottom:1px solid var(--border);color:var(--text-muted);">[ Section 2 ]</a>
-      <a href="#" style="display:block;font-size:12px;padding:5px 0;border-bottom:1px solid var(--border);color:var(--text-muted);">[ Section 3 ]</a>
-      <a href="#" style="display:block;font-size:12px;padding:5px 0;color:var(--text-muted);">[ Conclusion ]</a>
-    </aside>
-
-  </div>
-</main>
-
-<!-- Share Modal -->
-<div class="modal-overlay" id="modal-share">
-  <div class="modal-box">
-    <div class="modal-header"><strong>[ Share Post ]</strong><button class="modal-close">✕</button></div>
-    <div style="display:flex;gap:8px;flex-wrap:wrap;">
-      <button class="btn sm">[ Twitter ]</button>
-      <button class="btn sm">[ LinkedIn ]</button>
-      <button class="btn sm">[ Copy Link ]</button>
+    <!-- Cover image — full width, no side padding -->
+    <div class="post-cover">
+      <div class="placeholder-img post-cover-img">[ Cover Image ]</div>
     </div>
-  </div>
-</div>
+
+    <!-- Post body -->
+    <div class="post-body">
+
+      <!-- Meta row -->
+      <div class="post-meta-row">
+        <span class="tag">[ Category ]</span>
+        <span class="post-meta-dot">·</span>
+        <span class="post-date">[ Jan 1, 2024 ]</span>
+        <span class="post-meta-dot">·</span>
+        <span class="post-read-time">[ 5 min read ]</span>
+      </div>
+
+      <!-- Title -->
+      <h1 class="post-title">[ Blog Post Title ]</h1>
+
+      <!-- Content -->
+      <div class="post-content">
+        <p>[ Introduction paragraph. Set the scene, introduce the topic, and hook the reader. This is placeholder text for the opening of the blog post. ]</p>
+        <p>[ Second paragraph. Dive deeper into the topic. Provide context, background, or supporting information. ]</p>
+        <p>[ Third paragraph. Main content section. This is where the core argument or information is presented. ]</p>
+        <p>[ Fourth paragraph. Supporting details, examples, or case studies. ]</p>
+        <p>[ Conclusion paragraph. Wrap up the post, summarize key points, and provide a call to action or closing thought. ]</p>
+      </div>
+
+      <!-- Action bar -->
+      <div class="post-actions">
+        <a href="blog.html" class="btn">← Back to Blog</a>
+        <button class="btn primary" id="share-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          Share
+        </button>
+      </div>
+
+      <!-- Share feedback (shown briefly after copy) -->
+      <div class="post-share-toast" id="share-toast">✓ Link copied to clipboard</div>
+
+    </div>
+  </article>
+</main>
 
 <div class="modal-overlay" id="modal-profile">
   <div class="modal-box">
@@ -102,9 +101,35 @@
   </div>
 </div>
 
-
-
 <script src="js/main.js"></script>
 <script src="js/settings.js"></script>
+<script>
+  // Share button — copies current URL to clipboard
+  document.getElementById('share-btn').addEventListener('click', async () => {
+    const url = window.location.href;
+    const toast = document.getElementById('share-toast');
+
+    try {
+      if (navigator.share) {
+        // Native share sheet on mobile
+        await navigator.share({ title: document.title, url });
+      } else {
+        await navigator.clipboard.writeText(url);
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2400);
+      }
+    } catch {
+      // Fallback: select a temp input
+      const inp = document.createElement('input');
+      inp.value = url;
+      document.body.appendChild(inp);
+      inp.select();
+      document.execCommand('copy');
+      document.body.removeChild(inp);
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2400);
+    }
+  });
+</script>
 </body>
 </html>
