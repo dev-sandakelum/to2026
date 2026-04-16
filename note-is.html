@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hasitha Sandakelum — Information Systems</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* ── Note-specific extras ─────────────────────────────── */
+
+    /* Q&A block */
+    .qa-block {
+      background: var(--accent-light);
+      border: 1px solid var(--accent-mid);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      margin-top: 12px;
+    }
+    .qa-question {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .qa-question::before {
+      content: 'Q';
+      background: var(--accent);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 4px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .qa-answer {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      padding-left: 26px;
+    }
+
+    /* Highlight / callout block */
+    .highlight-block {
+      background: var(--surface-2);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 14px 16px;
+      margin-top: 12px;
+    }
+    .highlight-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 10px;
+    }
+    .highlight-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .highlight-list li {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      padding-left: 16px;
+      position: relative;
+    }
+    .highlight-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 10px;
+      top: 3px;
+    }
+
+    /* Subsection block */
+    .subsection-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      margin-top: 12px;
+    }
+    .subsection-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .subsection-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 8px;
+    }
+    .subsection-example {
+      font-size: 12px;
+      color: var(--text-light);
+      font-style: italic;
+      padding-left: 12px;
+      border-left: 2px solid var(--border);
+    }
+
+    /* Inline list */
+    .note-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 10px;
+    }
+    .note-list li {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      padding-left: 18px;
+      position: relative;
+    }
+    .note-list li::before {
+      content: '•';
+      position: absolute;
+      left: 4px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* Section group title (inside content-block) */
+    .group-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-light);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    /* Dark theme adjustments */
+    [data-theme="dark"] .qa-block { background: rgba(37,99,235,0.08); }
+    [data-theme="dark"] .highlight-block { background: var(--surface-2); }
+    [data-theme="dark"] .subsection-block { background: var(--surface-2); }
+  </style>
+</head>
+<body class="page-note">
+
+<!-- ── Navbar ──────────────────────────────────────────────── -->
+<nav class="navbar">
+  <a class="nav-logo" href="index.html">
+    <div class="nav-logo-badge">HS</div>
+    <span class="nav-logo-name">Hasitha</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="works.html">Works</a></li>
+    <li><a href="apps.html">Apps</a></li>
+    <li><a href="notes.html" class="active">Notes</a></li>
+    <li><a href="quiz.html">Quiz</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="working.html">Working</a></li>
+  </ul>
+  <div class="nav-right-group">
+    <button class="nav-settings-btn" aria-label="Settings" data-settings-open>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+    </button>
+    <div class="nav-right" data-modal-open="modal-profile">Hasitha ▾</div>
+  </div>
+  <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- ── Mobile Drawer ────────────────────────────────────────── -->
+<div class="nav-drawer">
+  <div class="nav-drawer-overlay"></div>
+  <div class="nav-drawer-panel">
+    <div class="nav-drawer-header">
+      <div class="nav-drawer-logo">
+        <div class="nav-drawer-logo-badge">HS</div>
+        <span class="nav-drawer-logo-name">Hasitha</span>
+      </div>
+      <button class="nav-drawer-close" aria-label="Close menu">✕</button>
+    </div>
+    <nav class="nav-drawer-links">
+      <a href="index.html"><span class="nav-drawer-link-icon">🏠</span>Home</a>
+      <a href="works.html"><span class="nav-drawer-link-icon">🗂</span>Works</a>
+      <a href="apps.html"><span class="nav-drawer-link-icon">🧩</span>Apps</a>
+      <a href="notes.html" class="active"><span class="nav-drawer-link-icon">📝</span>Notes</a>
+      <a href="quiz.html"><span class="nav-drawer-link-icon">🧠</span>Quiz</a>
+      <a href="blog.html"><span class="nav-drawer-link-icon">✍️</span>Blog</a>
+      <a href="working.html"><span class="nav-drawer-link-icon">🔭</span>Working</a>
+    </nav>
+    <div class="nav-drawer-footer">
+      <button class="nav-drawer-profile" data-modal-open="modal-profile">Hasitha Sandakelum</button>
+      <button class="nav-drawer-settings" data-settings-open>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        Settings
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Main ─────────────────────────────────────────────────── -->
+<main>
+  <div class="note-layout">
+
+    <!-- Desktop Sidebar TOC -->
+    <aside class="note-sidebar">
+      <h4>Contents</h4>
+      <a href="#intro">Introduction to IS</a>
+      <a href="#components">Components of IS</a>
+      <a href="#types">Types of Systems</a>
+      <a href="#lifecycle">SDLC</a>
+      <div style="margin-top:16px;">
+        <a href="notes.html"><button class="btn sm" style="width:100%;">← Back</button></a>
+      </div>
+    </aside>
+
+    <!-- Note Content -->
+    <div class="note-content">
+      <div class="section">
+        <div class="section-title">Note · ICT</div>
+        <h2>Information Systems</h2>
+        <div class="card-tags" style="margin-bottom:20px;">
+          <span class="tag">ICT</span>
+          <span class="tag">IS</span>
+          <span class="tag">University</span>
+        </div>
+
+        <!-- ── Section 1: Introduction to IS ─────────────── -->
+        <div class="content-block" id="intro">
+          <h3>Introduction to IS</h3>
+          <div class="group-title">Core Concepts</div>
+
+          <!-- Q&A -->
+          <div class="qa-block">
+            <div class="qa-question">What is an Information System?</div>
+            <div class="qa-answer">An Information System (IS) is a formal, sociotechnical, organizational system designed to collect, process, store, and distribute information. In a broader sense, it is a combination of hardware, software, and telecommunications networks that people build and use to collect, create, and distribute useful data.</div>
+          </div>
+
+          <!-- Highlight: Data vs Information -->
+          <div class="highlight-block" style="margin-top:14px;">
+            <div class="highlight-title">Data vs. Information</div>
+            <ul class="highlight-list">
+              <li><strong>Data:</strong> Raw facts and figures without context (e.g., a list of numbers).</li>
+              <li><strong>Information:</strong> Data that has been processed, organized, and structured to be meaningful (e.g., a monthly sales report).</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ── Section 2: Components of IS ──────────────── -->
+        <div class="content-block" id="components">
+          <h3>Components of IS</h3>
+          <div class="group-title">The Five-Component Model</div>
+
+          <p style="font-size:13px;color:var(--text-muted);line-height:1.7;margin-bottom:12px;">
+            A standard Information System is composed of five major components that interact to produce information:
+          </p>
+
+          <ul class="note-list">
+            <li><strong>Hardware:</strong> The physical devices (servers, workstations, mobile devices).</li>
+            <li><strong>Software:</strong> The programs and applications that instruct the hardware.</li>
+            <li><strong>Data:</strong> The bridge between the machine side and the human side.</li>
+            <li><strong>Procedures:</strong> The rules and instructions for the people using the system.</li>
+            <li><strong>People:</strong> The most important component; those who operate and use the system.</li>
+          </ul>
+        </div>
+
+        <!-- ── Section 3: Types of Systems ──────────────── -->
+        <div class="content-block" id="types">
+          <h3>Types of Systems</h3>
+          <div class="group-title">Organizational Hierarchy</div>
+
+          <!-- TPS -->
+          <div class="subsection-block">
+            <div class="subsection-title">Transaction Processing Systems (TPS)</div>
+            <div class="subsection-desc">Focuses on the daily, routine transactions necessary to conduct business.</div>
+            <div class="subsection-example">Example: Point-of-Sale (POS) systems or payroll processing.</div>
+          </div>
+
+          <!-- MIS -->
+          <div class="subsection-block">
+            <div class="subsection-title">Management Information Systems (MIS)</div>
+            <div class="subsection-desc">Provides middle management with reports on the organization's current performance.</div>
+            <div class="subsection-example">Example: Inventory status reports or annual budgets.</div>
+          </div>
+
+          <!-- DSS -->
+          <div class="subsection-block">
+            <div class="subsection-title">Decision Support Systems (DSS)</div>
+            <div class="subsection-desc">Focuses on problems that are unique and rapidly changing; provides data-driven support for non-routine decisions.</div>
+            <div class="qa-block" style="margin-top:10px;">
+              <div class="qa-question">Who uses DSS?</div>
+              <div class="qa-answer">Senior and middle management use these systems to analyze internal and external data for strategic planning.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Section 4: SDLC ────────────────────────────── -->
+        <div class="content-block" id="lifecycle">
+          <h3>SDLC</h3>
+          <div class="group-title">Systems Development Life Cycle</div>
+
+          <div class="highlight-block">
+            <div class="highlight-title">The Waterfall Model Phases</div>
+            <ul class="highlight-list">
+              <li><strong>1. Planning:</strong> Defining the scope and objectives.</li>
+              <li><strong>2. Analysis:</strong> Determining user requirements.</li>
+              <li><strong>3. Design:</strong> Creating the system blueprint.</li>
+              <li><strong>4. Implementation:</strong> Coding and installing the system.</li>
+              <li><strong>5. Maintenance:</strong> Updating and fixing the system over time.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div><!-- /section -->
+    </div><!-- /note-content -->
+
+  </div><!-- /note-layout -->
+</main>
+
+<!-- ── Mobile TOC Drawer ─────────────────────────────────────── -->
+<div class="toc-drawer" id="toc-drawer">
+  <div class="toc-drawer-overlay" id="toc-overlay"></div>
+  <div class="toc-drawer-panel">
+    <div class="toc-drawer-header">
+      <span class="toc-drawer-title">Contents</span>
+      <button class="toc-drawer-close" id="toc-close" aria-label="Close contents">✕</button>
+    </div>
+    <nav class="toc-drawer-links">
+      <a href="#intro">Introduction to IS</a>
+      <a href="#components">Components of IS</a>
+      <a href="#types">Types of Systems</a>
+      <a href="#lifecycle">SDLC</a>
+    </nav>
+    <div class="toc-drawer-footer">
+      <a href="notes.html"><button class="btn sm" style="width:100%;">← Back to Notes</button></a>
+    </div>
+  </div>
+</div>
+
+<!-- Floating TOC button (mobile only) -->
+<button class="toc-fab" id="toc-fab" aria-label="Open contents">
+  <span class="toc-fab-icon">☰</span>
+  <span class="toc-fab-label">Contents</span>
+</button>
+
+<!-- ── Profile Modal ─────────────────────────────────────────── -->
+<div class="modal-overlay" id="modal-profile">
+  <div class="modal-box">
+    <div class="modal-header">
+      <strong>Hasitha Sandakelum</strong>
+      <button class="modal-close">✕</button>
+    </div>
+    <p style="font-size:13px;color:var(--accent);font-weight:600;margin-bottom:6px;">Full-Stack Dev &amp; AI Builder</p>
+    <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;line-height:1.5;">BICT Undergrad @ University of Ruhuna · Colombo, Sri Lanka</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;">
+      <a href="https://github.com/dev-sandakelum/" target="_blank" rel="noopener" class="btn sm">GitHub ↗</a>
+      <a href="https://www.linkedin.com/in/hasitha-sandakelum/" target="_blank" rel="noopener" class="btn sm">LinkedIn ↗</a>
+      <a href="https://www.youtube.com/@hasitha_sandakelum" target="_blank" rel="noopener" class="btn sm">YouTube ↗</a>
+    </div>
+    <a href="admin.html"><button class="btn sm primary">⚙ Admin Panel</button></a>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/auth.js"></script>
+<script>
+  const tocDrawer  = document.getElementById('toc-drawer');
+  const tocOverlay = document.getElementById('toc-overlay');
+  const tocClose   = document.getElementById('toc-close');
+  const tocFab     = document.getElementById('toc-fab');
+
+  function openToc()  { tocDrawer.classList.add('open');    document.body.style.overflow = 'hidden'; }
+  function closeToc() { tocDrawer.classList.remove('open'); document.body.style.overflow = ''; }
+
+  tocFab.addEventListener('click', openToc);
+  tocClose.addEventListener('click', closeToc);
+  tocOverlay.addEventListener('click', closeToc);
+  document.querySelectorAll('.toc-drawer-links a').forEach(a => a.addEventListener('click', closeToc));
+</script>
+</body>
+</html>
