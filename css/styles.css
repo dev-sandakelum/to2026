@@ -1286,7 +1286,7 @@ main {
   .nav-toggle { display: flex; }
   .nav-drawer { display: block; }
 
-  main { padding: 20px 16px 80px; }
+  /* main padding handled by mobile-width block above */
 
   .cards-grid, .blog-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1299,8 +1299,7 @@ main {
 }
 
 @media (max-width: 540px) {
-  main { padding: 14px 12px 80px; }
-  .navbar { padding: 0 16px; }
+  /* main + navbar padding handled by mobile-width block above */
 
   .cards-grid, .blog-grid, .project-blocks,
   .gallery-grid, .skills-grid, .quiz-cat-grid { grid-template-columns: 1fr; }
@@ -1319,7 +1318,8 @@ main {
 
 /* ===== NOTE PAGE MOBILE SPACE OPTIMISATION ===== */
 @media (max-width: 768px) {
-  .page-note main { padding: 10px 10px 88px; }
+  /* note page handled by mobile-width block above */
+  .page-note main { padding: 6px 0 88px !important; }
   .page-note .section { padding: 14px; margin-bottom: 10px; }
   .page-note .section-title { margin-bottom: 12px; }
   .page-note .note-content h2 { font-size: 18px; }
@@ -1330,7 +1330,7 @@ main {
 }
 
 @media (max-width: 540px) {
-  .page-note main { padding: 8px 8px 88px; }
+  .page-note main { padding: 4px 0 88px !important; }
   .page-note .section { padding: 12px; border-radius: var(--radius-sm); }
 }
 
@@ -1669,8 +1669,135 @@ main {
 }
 
 /* ============================================================
-   APP VIBE — shell, scrollbars, bottom tab bar, transitions
+   MOBILE WIDTH — use every pixel, no wasted horizontal space
    ============================================================ */
+
+/* ---- ≤768px: reduce outer padding, sections go near-edge ---- */
+@media (max-width: 768px) {
+
+  /* Main container: 10px sides only */
+  main {
+    padding: 10px 10px 80px !important;
+    max-width: 100% !important;
+  }
+
+  /* Sections: tighter padding, left/right borders removed so they feel full-bleed */
+  .section {
+    padding: 14px 12px;
+    margin-bottom: 10px;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+  }
+
+  /* Section title */
+  .section-title { margin-bottom: 12px; }
+
+  /* Cards: tighter body */
+  .card-body { padding: 12px; }
+
+  /* Note cards */
+  .note-card { padding: 12px 14px; }
+
+  /* Blog cards */
+  .blog-card .card-body { padding: 12px; }
+
+  /* Timeline: less left indent */
+  .timeline { padding-left: 18px; }
+  .timeline-item { padding: 12px 14px; }
+  .timeline-item::before { left: -24px; }
+
+  /* Filter bar: tighter pills */
+  .filter-btn { padding: 5px 12px; font-size: 11px; }
+
+  /* Accordion */
+  .accordion-header { padding: 11px 12px; }
+  .accordion-body   { padding: 12px; }
+
+  /* Tabs */
+  .tab-btn { padding: 8px 12px; font-size: 12px; }
+  .tab-panel { padding: 12px; }
+
+  /* Quiz */
+  .quiz-container { max-width: 100%; }
+  .question-box { padding: 16px; }
+  .option-item  { padding: 11px 14px; }
+
+  /* Post / note layout: single col already, just tighten */
+  .post-content .para-block { padding: 14px; }
+  .note-content .content-block { padding: 12px 14px; }
+
+  /* Kanban */
+  .kanban-col-header { padding: 10px 12px; }
+  .kanban-item       { padding: 9px 12px; }
+
+  /* Log / reading */
+  .log-item      { padding: 8px 12px; }
+  .reading-item  { padding: 10px 12px; }
+
+  /* Stat cards */
+  .stat-card { padding: 16px 12px; }
+  .stat-card .stat-num { font-size: 22px; }
+
+  /* Hero */
+  .hero-text h1 { font-size: 22px; }
+  .hero-text .bio { font-size: 13px; }
+
+  /* Modal: full-width on mobile */
+  .modal-overlay { padding: 0; align-items: flex-end; }
+  .modal-box {
+    width: 100%;
+    max-width: 100%;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    padding: 20px 16px;
+  }
+
+  /* Data table: allow horizontal scroll inside a wrapper */
+  .admin-table-wrap { overflow-x: auto; }
+  .data-table { min-width: 480px; }
+}
+
+/* ---- ≤480px: go fully edge-to-edge ---- */
+@media (max-width: 480px) {
+
+  main {
+    padding: 6px 0 80px !important;  /* zero horizontal — sections fill screen */
+  }
+
+  .section {
+    padding: 12px 12px;
+    margin-bottom: 8px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  /* Navbar */
+  .navbar { padding: 0 12px; height: 52px; }
+  .nav-logo { font-size: 13px; padding: 5px 10px; }
+
+  /* Cards */
+  .card-body { padding: 10px 12px; }
+  .card-title { font-size: 13px; }
+
+  /* Hero */
+  .hero-text h1 { font-size: 20px; }
+  .hero-btns { flex-direction: column; }
+  .hero-btns .btn { width: 100%; justify-content: center; }
+
+  /* Skills: 3 col on small */
+  .skills-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .skill-item { padding: 8px 4px; font-size: 11px; }
+
+  /* Quiz play sidebar stacks */
+  .quiz-play-sidebar { grid-template-columns: 1fr; }
+
+  /* Bottom tab bar: smaller */
+  .tab-bar-icon  { font-size: 16px; }
+  .tab-bar-label { font-size: 8px; }
+  .bottom-tab-bar { padding: 4px 0; }
+  .tab-bar-item { padding: 5px 2px; }
+}
 
 /* Thin custom scrollbar on the main scroll area */
 main::-webkit-scrollbar { width: 4px; }
