@@ -1,51 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>[ Portfolio ] — Admin</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/admin.css" />
-</head>
+<?php
+$page_title  = 'Admin';
+$active_page = 'admin';
+$extra_css   = ['css/admin.css'];
+include 'components/head.php';
+?>
 <body class="page-admin">
 
-<nav class="navbar">
-  <div class="nav-logo">[ Logo ]</div>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="works.html">Works</a></li>
-    <li><a href="apps.html">Apps</a></li>
-    <li><a href="notes.html">Notes</a></li>
-    <li><a href="quiz.html">Quiz</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="working.html">Working</a></li>
-  </ul>
-  <div class="nav-right admin-badge">[ Admin ]</div>
-  <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
-</nav>
-
-<!-- Site mobile drawer -->
-<div class="nav-drawer">
-  <div class="nav-drawer-overlay"></div>
-  <div class="nav-drawer-panel">
-    <div class="nav-drawer-header">
-      <div class="nav-drawer-logo">[ Logo ]</div>
-      <button class="nav-drawer-close" aria-label="Close menu">✕</button>
-    </div>
-    <nav class="nav-drawer-links">
-      <a href="index.html">Home</a>
-      <a href="works.html">Works</a>
-      <a href="apps.html">Apps</a>
-      <a href="notes.html">Notes</a>
-      <a href="quiz.html">Quiz</a>
-      <a href="blog.html">Blog</a>
-      <a href="working.html">Working</a>
-    </nav>
-    <div class="nav-drawer-footer">
-      <button class="nav-drawer-profile admin-badge">[ Admin Panel ]</button>
-    </div>
-  </div>
-</div>
+<?php
+$nav_right = '<div class="nav-right admin-badge">[ Admin ]</div>';
+include 'components/navbar.php';
+?>
 
 <!-- ===== ADMIN SHELL ===== -->
 <div class="admin-shell">
@@ -84,7 +48,7 @@
       </nav>
 
       <div class="admin-sidebar-footer">
-        <a href="index.html" class="btn sm" style="width:100%;justify-content:center;">← Back to Site</a>
+        <a href="index.php" class="btn sm" style="width:100%;justify-content:center;">← Back to Site</a>
       </div>
 
     </div>
@@ -168,7 +132,6 @@
         <button class="btn sm primary" data-modal-open="modal-add">[ + Add App ]</button>
       </div>
 
-      <!-- Desktop table -->
       <div class="admin-table-wrap">
         <table class="data-table">
           <thead>
@@ -197,29 +160,19 @@
         </table>
       </div>
 
-      <!-- Mobile cards -->
       <div class="admin-card-list">
         <div class="admin-row-card">
-          <div class="admin-row-main">
-            <span class="admin-row-title">[ App Name ]</span>
-            <span class="tag">[ Active ]</span>
-          </div>
+          <div class="admin-row-main"><span class="admin-row-title">[ App Name ]</span><span class="tag">[ Active ]</span></div>
           <div class="admin-row-meta">[ Jan 1, 2024 ]</div>
           <div class="admin-row-actions"><button class="btn sm">[ Edit ]</button><button class="btn sm">[ Delete ]</button></div>
         </div>
         <div class="admin-row-card">
-          <div class="admin-row-main">
-            <span class="admin-row-title">[ App Name ]</span>
-            <span class="tag tag-draft">[ Draft ]</span>
-          </div>
+          <div class="admin-row-main"><span class="admin-row-title">[ App Name ]</span><span class="tag tag-draft">[ Draft ]</span></div>
           <div class="admin-row-meta">[ Feb 5, 2024 ]</div>
           <div class="admin-row-actions"><button class="btn sm">[ Edit ]</button><button class="btn sm">[ Delete ]</button></div>
         </div>
         <div class="admin-row-card">
-          <div class="admin-row-main">
-            <span class="admin-row-title">[ App Name ]</span>
-            <span class="tag">[ Active ]</span>
-          </div>
+          <div class="admin-row-main"><span class="admin-row-title">[ App Name ]</span><span class="tag">[ Active ]</span></div>
           <div class="admin-row-meta">[ Mar 10, 2024 ]</div>
           <div class="admin-row-actions"><button class="btn sm">[ Edit ]</button><button class="btn sm">[ Delete ]</button></div>
         </div>
@@ -408,19 +361,9 @@
   </div>
 </div>
 
-<footer>
-  <div class="footer-grid">
-    <div class="footer-col"><h4>[ Brand ]</h4><a href="#">[ About ]</a><a href="#">[ Contact ]</a></div>
-    <div class="footer-col"><h4>[ Work ]</h4><a href="works.html">[ Works ]</a><a href="apps.html">[ Apps ]</a></div>
-    <div class="footer-col"><h4>[ Content ]</h4><a href="notes.html">[ Notes ]</a><a href="blog.html">[ Blog ]</a></div>
-    <div class="footer-col"><h4>[ Other ]</h4><a href="quiz.html">[ Quiz ]</a><a href="working.html">[ Working ]</a></div>
-  </div>
-  <div class="footer-bottom">[ Footer text · © 2024 · All rights reserved ]</div>
-</footer>
+<?php include 'components/footer.php'; ?>
 
-<script src="js/main.js"></script>
-<script src="js/settings.js"></script>
-<script src="js/auth.js"></script>
+<?php include 'components/scripts.php'; ?>
 <script>
 // ===== ADMIN SIDEBAR =====
 const adminSidebar  = document.getElementById('admin-sidebar');
@@ -444,12 +387,12 @@ adminCloseBtn?.addEventListener('click', closeAdminSidebar);
 adminOverlay?.addEventListener('click', closeAdminSidebar);
 
 // ===== SECTION SWITCHING =====
-const sections   = document.querySelectorAll('.admin-section');
-const navItems   = document.querySelectorAll('.admin-nav-item');
-const topbarTitle = document.getElementById('admin-topbar-title');
+const sections     = document.querySelectorAll('.admin-section');
+const navItems     = document.querySelectorAll('.admin-nav-item');
+const topbarTitle  = document.getElementById('admin-topbar-title');
 const topbarAction = document.getElementById('admin-topbar-action');
 
-const sectionLabels = {
+const sectionLabels  = {
   dashboard: 'Dashboard', apps: 'Apps', notes: 'Notes',
   blog: 'Blog', analytics: 'Analytics', settings: 'Settings'
 };
@@ -458,7 +401,7 @@ const sectionActions = { apps: true, notes: true, blog: true };
 function switchSection(id) {
   sections.forEach(s => s.classList.toggle('active', s.id === id));
   navItems.forEach(a => a.classList.toggle('active', a.dataset.section === id));
-  if (topbarTitle) topbarTitle.textContent = sectionLabels[id] || id;
+  if (topbarTitle)  topbarTitle.textContent  = sectionLabels[id] || id;
   if (topbarAction) topbarAction.style.display = sectionActions[id] ? '' : 'none';
   closeAdminSidebar();
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -471,7 +414,6 @@ navItems.forEach(a => {
   });
 });
 
-// Quick cards on dashboard
 document.querySelectorAll('[data-goto]').forEach(btn => {
   btn.addEventListener('click', () => switchSection(btn.dataset.goto));
 });

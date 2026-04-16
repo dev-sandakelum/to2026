@@ -1,49 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>[ Portfolio ] — Quiz</title>
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
+<?php
+$page_title  = 'Quiz';
+$active_page = 'quiz';
+include 'components/head.php';
+?>
 <body>
 
-<nav class="navbar">
-  <div class="nav-logo">[ Logo ]</div>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="works.html">Works</a></li>
-    <li><a href="apps.html">Apps</a></li>
-    <li><a href="notes.html">Notes</a></li>
-    <li><a href="quiz.html" class="active">Quiz</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="working.html">Working</a></li>
-  </ul>
-  <div class="nav-right" data-modal-open="modal-profile">[ Profile ]</div>
-  <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
-</nav>
-
-<div class="nav-drawer">
-  <div class="nav-drawer-overlay"></div>
-  <div class="nav-drawer-panel">
-    <div class="nav-drawer-header">
-      <div class="nav-drawer-logo">[ Logo ]</div>
-      <button class="nav-drawer-close" aria-label="Close menu">✕</button>
-    </div>
-    <nav class="nav-drawer-links">
-      <a href="index.html">Home</a>
-      <a href="works.html">Works</a>
-      <a href="apps.html">Apps</a>
-      <a href="notes.html">Notes</a>
-      <a href="quiz.html" class="active">Quiz</a>
-      <a href="blog.html">Blog</a>
-      <a href="working.html">Working</a>
-    </nav>
-    <div class="nav-drawer-footer">
-      <button class="nav-drawer-profile" data-modal-open="modal-profile">[ Profile / Admin ]</button>
-    </div>
-  </div>
-</div>
+<?php include 'components/navbar.php'; ?>
 
 <main>
 
@@ -88,7 +50,7 @@
         <div class="quiz-cat-footer">
           <div class="quiz-cat-progress-wrap"><div class="quiz-cat-progress-bar" style="width:0%"></div></div>
           <span class="quiz-cat-progress-label">[ 0 / 20 ]</span>
-          <a href="quiz-play.html?cat=web-dev"><button class="btn primary sm">[ Start Quiz ]</button></a>
+          <a href="quiz-play.php?cat=web-dev"><button class="btn primary sm">[ Start Quiz ]</button></a>
         </div>
       </div>
 
@@ -103,7 +65,7 @@
         <div class="quiz-cat-footer">
           <div class="quiz-cat-progress-wrap"><div class="quiz-cat-progress-bar" style="width:40%"></div></div>
           <span class="quiz-cat-progress-label">[ 6 / 15 ]</span>
-          <a href="quiz-play.html?cat=python"><button class="btn sm">[ Continue ]</button></a>
+          <a href="quiz-play.php?cat=python"><button class="btn sm">[ Continue ]</button></a>
         </div>
       </div>
 
@@ -118,7 +80,7 @@
         <div class="quiz-cat-footer">
           <div class="quiz-cat-progress-wrap"><div class="quiz-cat-progress-bar" style="width:0%"></div></div>
           <span class="quiz-cat-progress-label">[ 0 / 25 ]</span>
-          <a href="quiz-play.html?cat=biology"><button class="btn primary sm">[ Start Quiz ]</button></a>
+          <a href="quiz-play.php?cat=biology"><button class="btn primary sm">[ Start Quiz ]</button></a>
         </div>
       </div>
 
@@ -133,7 +95,7 @@
         <div class="quiz-cat-footer">
           <div class="quiz-cat-progress-wrap"><div class="quiz-cat-progress-bar" style="width:100%"></div></div>
           <span class="quiz-cat-progress-label">[ ✓ Done ]</span>
-          <a href="quiz-play.html?cat=chemistry"><button class="btn sm">[ Retry ]</button></a>
+          <a href="quiz-play.php?cat=chemistry"><button class="btn sm">[ Retry ]</button></a>
         </div>
       </div>
 
@@ -148,7 +110,7 @@
         <div class="quiz-cat-footer">
           <div class="quiz-cat-progress-wrap"><div class="quiz-cat-progress-bar" style="width:0%"></div></div>
           <span class="quiz-cat-progress-label">[ 0 / 18 ]</span>
-          <a href="quiz-play.html?cat=algebra"><button class="btn primary sm">[ Start Quiz ]</button></a>
+          <a href="quiz-play.php?cat=algebra"><button class="btn primary sm">[ Start Quiz ]</button></a>
         </div>
       </div>
 
@@ -163,7 +125,7 @@
         <div class="quiz-cat-footer">
           <div class="quiz-cat-progress-wrap"><div class="quiz-cat-progress-bar" style="width:20%"></div></div>
           <span class="quiz-cat-progress-label">[ 3 / 15 ]</span>
-          <a href="quiz-play.html?cat=geometry"><button class="btn sm">[ Continue ]</button></a>
+          <a href="quiz-play.php?cat=geometry"><button class="btn sm">[ Continue ]</button></a>
         </div>
       </div>
 
@@ -178,7 +140,7 @@
         <div class="quiz-cat-footer">
           <div class="quiz-cat-progress-wrap"><div class="quiz-cat-progress-bar" style="width:0%"></div></div>
           <span class="quiz-cat-progress-label">[ 0 / 20 ]</span>
-          <a href="quiz-play.html?cat=grammar"><button class="btn primary sm">[ Start Quiz ]</button></a>
+          <a href="quiz-play.php?cat=grammar"><button class="btn primary sm">[ Start Quiz ]</button></a>
         </div>
       </div>
 
@@ -193,7 +155,7 @@
         <div class="quiz-cat-footer">
           <div class="quiz-cat-progress-wrap"><div class="quiz-cat-progress-bar" style="width:0%"></div></div>
           <span class="quiz-cat-progress-label">[ 0 / 30 ]</span>
-          <a href="quiz-play.html?cat=general"><button class="btn primary sm">[ Start Quiz ]</button></a>
+          <a href="quiz-play.php?cat=general"><button class="btn primary sm">[ Start Quiz ]</button></a>
         </div>
       </div>
 
@@ -208,28 +170,18 @@
         <tr><th>[ Quiz ]</th><th>[ Score ]</th><th>[ Date ]</th><th>[ Action ]</th></tr>
       </thead>
       <tbody>
-        <tr><td>[ Chemistry ]</td><td>[ 18 / 20 ]</td><td>[ Jan 5, 2024 ]</td><td><a href="quiz-play.html"><button class="btn sm">[ Retry ]</button></a></td></tr>
-        <tr><td>[ Python Basics ]</td><td>[ 6 / 15 — In Progress ]</td><td>[ Jan 3, 2024 ]</td><td><a href="quiz-play.html"><button class="btn sm">[ Continue ]</button></a></td></tr>
-        <tr><td>[ Geometry ]</td><td>[ 3 / 15 — In Progress ]</td><td>[ Jan 1, 2024 ]</td><td><a href="quiz-play.html"><button class="btn sm">[ Continue ]</button></a></td></tr>
+        <tr><td>[ Chemistry ]</td><td>[ 18 / 20 ]</td><td>[ Jan 5, 2024 ]</td><td><a href="quiz-play.php"><button class="btn sm">[ Retry ]</button></a></td></tr>
+        <tr><td>[ Python Basics ]</td><td>[ 6 / 15 — In Progress ]</td><td>[ Jan 3, 2024 ]</td><td><a href="quiz-play.php"><button class="btn sm">[ Continue ]</button></a></td></tr>
+        <tr><td>[ Geometry ]</td><td>[ 3 / 15 — In Progress ]</td><td>[ Jan 1, 2024 ]</td><td><a href="quiz-play.php"><button class="btn sm">[ Continue ]</button></a></td></tr>
       </tbody>
     </table>
   </section>
 
 </main>
 
-<div class="modal-overlay" id="modal-profile">
-  <div class="modal-box">
-    <div class="modal-header"><strong>[ Profile ]</strong><button class="modal-close">✕</button></div>
-    <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">[ User profile placeholder. ]</p>
-    <a href="admin.html"><button class="btn sm">[ Admin Panel ]</button></a>
-  </div>
-</div>
+<?php include 'components/modal-profile.php'; ?>
 
-
-
-<script src="js/main.js"></script>
-<script src="js/settings.js"></script>
-<script src="js/auth.js"></script>
+<?php include 'components/scripts.php'; ?>
 <script>
   // Category filter for quiz cards
   document.querySelectorAll('.filter-btn').forEach(btn => {

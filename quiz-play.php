@@ -1,49 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>[ Portfolio ] — Quiz Play</title>
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
+<?php
+$page_title  = 'Quiz Play';
+$active_page = 'quiz';
+include 'components/head.php';
+?>
 <body>
 
-<nav class="navbar">
-  <div class="nav-logo">[ Logo ]</div>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="works.html">Works</a></li>
-    <li><a href="apps.html">Apps</a></li>
-    <li><a href="notes.html">Notes</a></li>
-    <li><a href="quiz.html" class="active">Quiz</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="working.html">Working</a></li>
-  </ul>
-  <div class="nav-right" data-modal-open="modal-profile">[ Profile ]</div>
-  <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
-</nav>
-
-<div class="nav-drawer">
-  <div class="nav-drawer-overlay"></div>
-  <div class="nav-drawer-panel">
-    <div class="nav-drawer-header">
-      <div class="nav-drawer-logo">[ Logo ]</div>
-      <button class="nav-drawer-close" aria-label="Close menu">✕</button>
-    </div>
-    <nav class="nav-drawer-links">
-      <a href="index.html">Home</a>
-      <a href="works.html">Works</a>
-      <a href="apps.html">Apps</a>
-      <a href="notes.html">Notes</a>
-      <a href="quiz.html" class="active">Quiz</a>
-      <a href="blog.html">Blog</a>
-      <a href="working.html">Working</a>
-    </nav>
-    <div class="nav-drawer-footer">
-      <button class="nav-drawer-profile" data-modal-open="modal-profile">[ Profile / Admin ]</button>
-    </div>
-  </div>
-</div>
+<?php include 'components/navbar.php'; ?>
 
 <main>
   <div class="quiz-play-layout">
@@ -54,7 +16,7 @@
       <!-- Quiz Header -->
       <div class="quiz-play-header section">
         <div class="quiz-play-breadcrumb">
-          <a href="quiz.html">[ ← All Quizzes ]</a>
+          <a href="quiz.php">[ ← All Quizzes ]</a>
           <span class="quiz-play-sep">/</span>
           <span id="play-cat-name">[ Web Development ]</span>
         </div>
@@ -73,9 +35,7 @@
         <div class="progress-bar-wrap">
           <div class="progress-bar-fill" id="progress-fill" style="width:20%;"></div>
         </div>
-        <div class="quiz-step-dots" id="step-dots">
-          <!-- filled by JS -->
-        </div>
+        <div class="quiz-step-dots" id="step-dots"></div>
       </div>
 
       <!-- Question Card -->
@@ -129,9 +89,7 @@
       <!-- Question Map -->
       <div class="section">
         <div class="section-title">[ Question Map ]</div>
-        <div class="quiz-q-map" id="q-map">
-          <!-- filled by JS -->
-        </div>
+        <div class="quiz-q-map" id="q-map"></div>
         <div class="quiz-map-legend">
           <span class="quiz-map-dot answered"></span> [ Answered ]
           <span class="quiz-map-dot current"></span> [ Current ]
@@ -145,7 +103,7 @@
         <div style="display:flex;flex-direction:column;gap:8px;">
           <button class="btn sm" data-modal-open="modal-quit">[ Quit Quiz ]</button>
           <button class="btn sm" id="restart-btn">[ Restart ]</button>
-          <a href="quiz.html"><button class="btn sm">[ All Quizzes ]</button></a>
+          <a href="quiz.php"><button class="btn sm">[ All Quizzes ]</button></a>
         </div>
       </div>
 
@@ -169,7 +127,7 @@
       <div class="quiz-results-msg" id="results-msg">[ Placeholder result message based on score. ]</div>
       <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;">
         <button class="btn primary" id="results-restart">[ Try Again ]</button>
-        <a href="quiz.html"><button class="btn">[ Back to Quizzes ]</button></a>
+        <a href="quiz.php"><button class="btn">[ Back to Quizzes ]</button></a>
       </div>
     </div>
   </div>
@@ -182,25 +140,15 @@
     <div class="modal-header"><strong>[ Quit Quiz? ]</strong><button class="modal-close">✕</button></div>
     <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;">[ Your progress will be lost. Are you sure you want to quit? ]</p>
     <div style="display:flex;gap:8px;">
-      <a href="quiz.html"><button class="btn primary sm">[ Yes, Quit ]</button></a>
+      <a href="quiz.php"><button class="btn primary sm">[ Yes, Quit ]</button></a>
       <button class="btn sm modal-close">[ Cancel ]</button>
     </div>
   </div>
 </div>
 
-<div class="modal-overlay" id="modal-profile">
-  <div class="modal-box">
-    <div class="modal-header"><strong>[ Profile ]</strong><button class="modal-close">✕</button></div>
-    <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">[ User profile placeholder. ]</p>
-    <a href="admin.html"><button class="btn sm">[ Admin Panel ]</button></a>
-  </div>
-</div>
+<?php include 'components/modal-profile.php'; ?>
 
-
-
-<script src="js/main.js"></script>
-<script src="js/settings.js"></script>
-<script src="js/auth.js"></script>
+<?php include 'components/scripts.php'; ?>
 <script>
 const quizData = [
   { q: '[ Question 1: Placeholder question text goes here? ]', opts: ['[ Option A ]', '[ Option B ]', '[ Option C ]', '[ Option D ]'], answer: 0 },
@@ -212,7 +160,7 @@ const quizData = [
 
 let current = 0;
 let score = { correct: 0, wrong: 0, skipped: 0 };
-let answered = new Array(quizData.length).fill(null); // null | 'correct' | 'wrong' | 'skipped'
+let answered = new Array(quizData.length).fill(null);
 let selected = null;
 
 const qText     = document.getElementById('question-text');
@@ -279,11 +227,9 @@ function loadQuestion() {
     li.dataset.idx = i;
     li.textContent = opt;
 
-    // restore state if already answered
     if (answered[current] !== null) {
       li.style.pointerEvents = 'none';
       if (i === data.answer) li.classList.add('correct-ans');
-      if (answered[current] === 'wrong' && i === /* selected idx stored? */ -1) li.classList.add('wrong-ans');
       nextBtn.disabled = false;
     }
 
@@ -327,7 +273,6 @@ function submitAnswer(skipped) {
     }
   }
 
-  // highlight correct answer
   optList.querySelectorAll('.option-item').forEach((li, i) => {
     if (i === data.answer) li.classList.add('correct-ans');
     else if (i === selected && !skipped) li.classList.add('wrong-ans');
@@ -359,10 +304,6 @@ skipBtn.addEventListener('click', () => {
 
 function showResults() {
   document.querySelector('.quiz-play-layout').style.display = 'none';
-  if (window.Auth && window.Auth.isLoggedIn()) {
-    const u = window.Auth.user;
-    console.log('Progress saved for', u.name);
-  }
   results.style.display = 'block';
   const total = quizData.length;
   const pct = Math.round((score.correct / total) * 100);
@@ -387,13 +328,9 @@ function restartQuiz() {
   loadQuestion();
 }
 
-document.getElementById('restart-btn').addEventListener('click', () => {
-  if (window.requireAuthForQuiz && !window.requireAuthForQuiz('restart')) return;
-  restartQuiz();
-});
+document.getElementById('restart-btn').addEventListener('click', restartQuiz);
 document.getElementById('results-restart').addEventListener('click', restartQuiz);
 
-// init
 loadQuestion();
 </script>
 </body>

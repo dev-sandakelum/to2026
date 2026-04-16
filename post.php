@@ -1,49 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>[ Blog Post Title ] — Portfolio</title>
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
+<?php
+$page_title  = 'Blog Post Title';
+$active_page = 'blog';
+include 'components/head.php';
+?>
 <body class="page-post">
 
-<nav class="navbar">
-  <div class="nav-logo">[ Logo ]</div>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="works.html">Works</a></li>
-    <li><a href="apps.html">Apps</a></li>
-    <li><a href="notes.html">Notes</a></li>
-    <li><a href="quiz.html">Quiz</a></li>
-    <li><a href="blog.html" class="active">Blog</a></li>
-    <li><a href="working.html">Working</a></li>
-  </ul>
-  <div class="nav-right" data-modal-open="modal-profile">[ Profile ]</div>
-  <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
-</nav>
-
-<div class="nav-drawer">
-  <div class="nav-drawer-overlay"></div>
-  <div class="nav-drawer-panel">
-    <div class="nav-drawer-header">
-      <div class="nav-drawer-logo">[ Logo ]</div>
-      <button class="nav-drawer-close" aria-label="Close menu">✕</button>
-    </div>
-    <nav class="nav-drawer-links">
-      <a href="index.html">Home</a>
-      <a href="works.html">Works</a>
-      <a href="apps.html">Apps</a>
-      <a href="notes.html">Notes</a>
-      <a href="quiz.html">Quiz</a>
-      <a href="blog.html" class="active">Blog</a>
-      <a href="working.html">Working</a>
-    </nav>
-    <div class="nav-drawer-footer">
-      <button class="nav-drawer-profile" data-modal-open="modal-profile">[ Profile / Admin ]</button>
-    </div>
-  </div>
-</div>
+<?php include 'components/navbar.php'; ?>
 
 <main>
   <article class="post-article" data-post-id="post-1">
@@ -79,7 +41,7 @@
 
       <!-- Action bar -->
       <div class="post-actions">
-        <a href="blog.html" class="btn">← Back to Blog</a>
+        <a href="blog.php" class="btn">← Back to Blog</a>
         <button class="btn primary" id="share-btn">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
           Share
@@ -99,17 +61,9 @@
   </article>
 </main>
 
-<div class="modal-overlay" id="modal-profile">
-  <div class="modal-box">
-    <div class="modal-header"><strong>[ Profile ]</strong><button class="modal-close">✕</button></div>
-    <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">[ User profile placeholder. ]</p>
-    <a href="admin.html"><button class="btn sm">[ Admin Panel ]</button></a>
-  </div>
-</div>
+<?php include 'components/modal-profile.php'; ?>
 
-<script src="js/main.js"></script>
-<script src="js/settings.js"></script>
-<script src="js/auth.js"></script>
+<?php include 'components/scripts.php'; ?>
 <script>
   // Share button — copies current URL to clipboard
   document.getElementById('share-btn').addEventListener('click', async () => {
@@ -118,7 +72,6 @@
 
     try {
       if (navigator.share) {
-        // Native share sheet on mobile
         await navigator.share({ title: document.title, url });
       } else {
         await navigator.clipboard.writeText(url);
@@ -126,7 +79,6 @@
         setTimeout(() => toast.classList.remove('show'), 2400);
       }
     } catch {
-      // Fallback: select a temp input
       const inp = document.createElement('input');
       inp.value = url;
       document.body.appendChild(inp);

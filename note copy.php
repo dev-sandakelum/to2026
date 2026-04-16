@@ -11,13 +11,13 @@
 <nav class="navbar">
   <div class="nav-logo">[ Logo ]</div>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="works.html">Works</a></li>
-    <li><a href="apps.html">Apps</a></li>
-    <li><a href="notes.html" class="active">Notes</a></li>
-    <li><a href="quiz.html">Quiz</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="working.html">Working</a></li>
+    <li><a href="index.php">Home</a></li>
+    <li><a href="works.php">Works</a></li>
+    <li><a href="apps.php">Apps</a></li>
+    <li><a href="notes.php" class="active">Notes</a></li>
+    <li><a href="quiz.php">Quiz</a></li>
+    <li><a href="blog.php">Blog</a></li>
+    <li><a href="working.php">Working</a></li>
   </ul>
   <div class="nav-right" data-modal-open="modal-profile">[ Profile ]</div>
   <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
@@ -32,13 +32,13 @@
       <button class="nav-drawer-close" aria-label="Close menu">✕</button>
     </div>
     <nav class="nav-drawer-links">
-      <a href="index.html">Home</a>
-      <a href="works.html">Works</a>
-      <a href="apps.html">Apps</a>
-      <a href="notes.html" class="active">Notes</a>
-      <a href="quiz.html">Quiz</a>
-      <a href="blog.html">Blog</a>
-      <a href="working.html">Working</a>
+      <a href="index.php">Home</a>
+      <a href="works.php">Works</a>
+      <a href="apps.php">Apps</a>
+      <a href="notes.php" class="active">Notes</a>
+      <a href="quiz.php">Quiz</a>
+      <a href="blog.php">Blog</a>
+      <a href="working.php">Working</a>
     </nav>
     <div class="nav-drawer-footer">
       <button class="nav-drawer-profile" data-modal-open="modal-profile">[ Profile / Admin ]</button>
@@ -58,7 +58,7 @@
       <a href="#sec4">[ Section 4 ]</a>
       <a href="#sec5">[ Section 5 ]</a>
       <div style="margin-top:16px;">
-        <a href="notes.html"><button class="btn sm" style="width:100%;">← [ Back ]</button></a>
+        <a href="notes.php"><button class="btn sm" style="width:100%;">← [ Back ]</button></a>
       </div>
     </aside>
 
@@ -115,7 +115,7 @@
       <a href="#sec5">[ Section 5 ]</a>
     </nav>
     <div class="toc-drawer-footer">
-      <a href="notes.html"><button class="btn sm" style="width:100%;">← [ Back to Notes ]</button></a>
+      <a href="notes.php"><button class="btn sm" style="width:100%;">← [ Back to Notes ]</button></a>
     </div>
   </div>
 </div>
@@ -130,16 +130,16 @@
   <div class="modal-box">
     <div class="modal-header"><strong>[ Profile ]</strong><button class="modal-close">✕</button></div>
     <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">[ User profile placeholder. ]</p>
-    <a href="admin.html"><button class="btn sm">[ Admin Panel ]</button></a>
+    <a href="admin.php"><button class="btn sm">[ Admin Panel ]</button></a>
   </div>
 </div>
 
 <footer>
   <div class="footer-grid">
     <div class="footer-col"><h4>[ Brand ]</h4><a href="#">[ About ]</a><a href="#">[ Contact ]</a></div>
-    <div class="footer-col"><h4>[ Work ]</h4><a href="works.html">[ Works ]</a><a href="apps.html">[ Apps ]</a></div>
-    <div class="footer-col"><h4>[ Content ]</h4><a href="notes.html">[ Notes ]</a><a href="blog.html">[ Blog ]</a></div>
-    <div class="footer-col"><h4>[ Other ]</h4><a href="quiz.html">[ Quiz ]</a><a href="working.html">[ Working ]</a></div>
+    <div class="footer-col"><h4>[ Work ]</h4><a href="works.php">[ Works ]</a><a href="apps.php">[ Apps ]</a></div>
+    <div class="footer-col"><h4>[ Content ]</h4><a href="notes.php">[ Notes ]</a><a href="blog.php">[ Blog ]</a></div>
+    <div class="footer-col"><h4>[ Other ]</h4><a href="quiz.php">[ Quiz ]</a><a href="working.php">[ Working ]</a></div>
   </div>
   <div class="footer-bottom">[ Footer text · © 2024 · All rights reserved ]</div>
 </footer>
@@ -172,3 +172,4 @@
 </script>
 </body>
 </html>
+

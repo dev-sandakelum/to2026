@@ -1,50 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>[ Portfolio ] — Blog</title>
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
+<?php
+$page_title  = 'Blog';
+$active_page = 'blog';
+include 'components/head.php';
+?>
 <body>
 
-<nav class="navbar">
-  <div class="nav-logo">[ Logo ]</div>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="works.html">Works</a></li>
-    <li><a href="apps.html">Apps</a></li>
-    <li><a href="notes.html">Notes</a></li>
-    <li><a href="quiz.html">Quiz</a></li>
-    <li><a href="blog.html" class="active">Blog</a></li>
-    <li><a href="working.html">Working</a></li>
-  </ul>
-  <div class="nav-right" data-modal-open="modal-profile">[ Profile ]</div>
-  <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
-</nav>
-
-<!-- Mobile Drawer -->
-<div class="nav-drawer">
-  <div class="nav-drawer-overlay"></div>
-  <div class="nav-drawer-panel">
-    <div class="nav-drawer-header">
-      <div class="nav-drawer-logo">[ Logo ]</div>
-      <button class="nav-drawer-close" aria-label="Close menu">✕</button>
-    </div>
-    <nav class="nav-drawer-links">
-      <a href="index.html">Home</a>
-      <a href="works.html">Works</a>
-      <a href="apps.html">Apps</a>
-      <a href="notes.html">Notes</a>
-      <a href="quiz.html">Quiz</a>
-      <a href="blog.html" class="active">Blog</a>
-      <a href="working.html">Working</a>
-    </nav>
-    <div class="nav-drawer-footer">
-      <button class="nav-drawer-profile" data-modal-open="modal-profile">[ Profile / Admin ]</button>
-    </div>
-  </div>
-</div>
+<?php include 'components/navbar.php'; ?>
 
 <main>
   <section class="section">
@@ -66,7 +27,7 @@
           <div class="card-title">[ Blog Post Title ]</div>
           <p class="card-text">[ Short excerpt from the blog post. A couple of sentences to give the reader a preview. ]</p>
           <div class="card-tags"><span class="tag">[ Tech ]</span></div>
-          <a href="post.html"><button class="btn sm" style="margin-top:10px;">[ Read More ]</button></a>
+          <a href="post.php"><button class="btn sm" style="margin-top:10px;">[ Read More ]</button></a>
           <div class="react-bar">
             <button class="react-btn" data-react="like" data-base-count="12"><span class="react-emoji">👍</span><span class="react-count">12</span></button>
             <button class="react-btn" data-react="love" data-base-count="5"><span class="react-emoji">❤️</span><span class="react-count">5</span></button>
@@ -82,7 +43,7 @@
           <div class="card-title">[ Blog Post Title ]</div>
           <p class="card-text">[ Short excerpt from the blog post. A couple of sentences to give the reader a preview. ]</p>
           <div class="card-tags"><span class="tag">[ Design ]</span></div>
-          <a href="post.html"><button class="btn sm" style="margin-top:10px;">[ Read More ]</button></a>
+          <a href="post.php"><button class="btn sm" style="margin-top:10px;">[ Read More ]</button></a>
           <div class="react-bar">
             <button class="react-btn" data-react="like" data-base-count="8"><span class="react-emoji">👍</span><span class="react-count">8</span></button>
             <button class="react-btn" data-react="love" data-base-count="14"><span class="react-emoji">❤️</span><span class="react-count">14</span></button>
@@ -98,7 +59,7 @@
           <div class="card-title">[ Blog Post Title ]</div>
           <p class="card-text">[ Short excerpt from the blog post. A couple of sentences to give the reader a preview. ]</p>
           <div class="card-tags"><span class="tag">[ Life ]</span></div>
-          <a href="post.html"><button class="btn sm" style="margin-top:10px;">[ Read More ]</button></a>
+          <a href="post.php"><button class="btn sm" style="margin-top:10px;">[ Read More ]</button></a>
           <div class="react-bar">
             <button class="react-btn" data-react="like" data-base-count="20"><span class="react-emoji">👍</span><span class="react-count">20</span></button>
             <button class="react-btn" data-react="love" data-base-count="9"><span class="react-emoji">❤️</span><span class="react-count">9</span></button>
@@ -114,7 +75,7 @@
           <div class="card-title">[ Blog Post Title ]</div>
           <p class="card-text">[ Short excerpt from the blog post. A couple of sentences to give the reader a preview. ]</p>
           <div class="card-tags"><span class="tag">[ Tech ]</span></div>
-          <a href="post.html"><button class="btn sm" style="margin-top:10px;">[ Read More ]</button></a>
+          <a href="post.php"><button class="btn sm" style="margin-top:10px;">[ Read More ]</button></a>
           <div class="react-bar">
             <button class="react-btn" data-react="like" data-base-count="7"><span class="react-emoji">👍</span><span class="react-count">7</span></button>
             <button class="react-btn" data-react="love" data-base-count="4"><span class="react-emoji">❤️</span><span class="react-count">4</span></button>
@@ -130,7 +91,7 @@
           <div class="card-title">[ Blog Post Title ]</div>
           <p class="card-text">[ Short excerpt from the blog post. A couple of sentences to give the reader a preview. ]</p>
           <div class="card-tags"><span class="tag">[ Design ]</span></div>
-          <a href="post.html"><button class="btn sm" style="margin-top:10px;">[ Read More ]</button></a>
+          <a href="post.php"><button class="btn sm" style="margin-top:10px;">[ Read More ]</button></a>
           <div class="react-bar">
             <button class="react-btn" data-react="like" data-base-count="15"><span class="react-emoji">👍</span><span class="react-count">15</span></button>
             <button class="react-btn" data-react="love" data-base-count="7"><span class="react-emoji">❤️</span><span class="react-count">7</span></button>
@@ -146,7 +107,7 @@
           <div class="card-title">[ Blog Post Title ]</div>
           <p class="card-text">[ Short excerpt from the blog post. A couple of sentences to give the reader a preview. ]</p>
           <div class="card-tags"><span class="tag">[ Life ]</span></div>
-          <a href="post.html"><button class="btn sm" style="margin-top:10px;">[ Read More ]</button></a>
+          <a href="post.php"><button class="btn sm" style="margin-top:10px;">[ Read More ]</button></a>
           <div class="react-bar">
             <button class="react-btn" data-react="like" data-base-count="10"><span class="react-emoji">👍</span><span class="react-count">10</span></button>
             <button class="react-btn" data-react="love" data-base-count="6"><span class="react-emoji">❤️</span><span class="react-count">6</span></button>
@@ -159,18 +120,8 @@
   </section>
 </main>
 
-<div class="modal-overlay" id="modal-profile">
-  <div class="modal-box">
-    <div class="modal-header"><strong>[ Profile ]</strong><button class="modal-close">✕</button></div>
-    <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">[ User profile placeholder. ]</p>
-    <a href="admin.html"><button class="btn sm">[ Admin Panel ]</button></a>
-  </div>
-</div>
+<?php include 'components/modal-profile.php'; ?>
 
-
-
-<script src="js/main.js"></script>
-<script src="js/settings.js"></script>
-<script src="js/auth.js"></script>
+<?php include 'components/scripts.php'; ?>
 </body>
 </html>

@@ -57,50 +57,97 @@ button { cursor: pointer; font-family: inherit; }
 /* ===== NAVBAR ===== */
 .navbar {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 28px;
-  height: 60px;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  padding: 0 24px;
+  height: 58px;
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
   z-index: 100;
-  gap: 16px;
+  gap: 12px;
+  flex-shrink: 0;
 }
 
+/* Left: logo */
 .nav-logo {
   font-weight: 800;
-  font-size: 15px;
-  color: var(--text);
+  font-size: 14px;
   letter-spacing: -0.3px;
-  padding: 6px 14px;
+  padding: 6px 13px;
   background: var(--accent);
   color: #fff;
   border-radius: var(--radius-sm);
   flex-shrink: 0;
+  text-decoration: none;
+  transition: background var(--transition);
 }
+.nav-logo:hover { background: var(--accent-dark); }
 
+/* Center: links — grow to fill space, centered */
 .nav-links {
   display: flex;
   gap: 2px;
   align-items: center;
+  flex: 1;
+  justify-content: center;
 }
 
 .nav-links a {
-  padding: 6px 12px;
+  padding: 6px 11px;
   border-radius: var(--radius-sm);
   font-size: 13px;
   font-weight: 500;
   color: var(--text-muted);
   transition: background var(--transition), color var(--transition);
   white-space: nowrap;
+  position: relative;
+}
+.nav-links a:hover { background: var(--surface-2); color: var(--text); }
+.nav-links a.active {
+  background: var(--accent-light);
+  color: var(--accent);
+  font-weight: 600;
+}
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 99px;
 }
 
-.nav-links a:hover { background: var(--surface-2); color: var(--text); }
-.nav-links a.active { background: var(--accent-light); color: var(--accent); font-weight: 600; }
+/* Right: grouped actions — order: Sign-in | ⚙ Settings | Hamburger */
+.nav-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* Settings icon — separated by a thin divider from sign-in */
+.nav-actions .nav-settings-btn {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  margin-left: 2px;
+}
+
+/* On mobile, settings lives in the drawer — hide it from the navbar */
+@media (max-width: 768px) {
+  .nav-actions .nav-settings-btn { display: none; }
+}
 
 .nav-right {
   font-size: 13px;
@@ -111,28 +158,30 @@ button { cursor: pointer; font-family: inherit; }
   border: 1px solid var(--border);
   background: var(--surface);
   transition: all var(--transition);
-  flex-shrink: 0;
   cursor: pointer;
+  white-space: nowrap;
 }
 .nav-right:hover { border-color: var(--accent); color: var(--accent); }
 
+/* Hamburger — hidden on desktop, shown on mobile */
 .nav-toggle {
   display: none;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 5px;
   cursor: pointer;
-  padding: 8px;
+  padding: 0;
   border: 1px solid var(--border);
   background: var(--surface);
   border-radius: var(--radius-sm);
   flex-shrink: 0;
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
 }
 .nav-toggle span {
   display: block;
-  width: 18px;
+  width: 16px;
   height: 2px;
   background: var(--text-muted);
   border-radius: 2px;
@@ -156,22 +205,22 @@ button { cursor: pointer; font-family: inherit; }
 .nav-drawer-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(15,23,42,0.4);
+  background: rgba(15,23,42,0.45);
   opacity: 0;
-  transition: opacity 0.2s;
-  backdrop-filter: blur(2px);
+  transition: opacity 0.22s;
+  backdrop-filter: blur(3px);
 }
 .nav-drawer.open .nav-drawer-overlay { opacity: 1; }
 
 .nav-drawer-panel {
   position: absolute;
   top: 0; left: 0;
-  width: 270px;
+  width: 280px;
   height: 100%;
   background: var(--surface);
   border-right: 1px solid var(--border);
   transform: translateX(-100%);
-  transition: transform 0.25s ease;
+  transition: transform 0.26s cubic-bezier(0.4,0,0.2,1);
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -183,58 +232,75 @@ button { cursor: pointer; font-family: inherit; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 20px;
+  padding: 14px 18px;
   border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
 }
 .nav-drawer-logo {
   font-weight: 800;
-  font-size: 14px;
+  font-size: 13px;
   padding: 5px 12px;
   background: var(--accent);
   color: #fff;
   border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: background var(--transition);
 }
+.nav-drawer-logo:hover { background: var(--accent-dark); }
+
 .nav-drawer-close {
   border: 1px solid var(--border);
-  background: none;
-  font-size: 16px;
+  background: var(--surface);
+  font-size: 15px;
   cursor: pointer;
-  padding: 4px 10px;
+  width: 32px;
+  height: 32px;
   border-radius: var(--radius-sm);
   color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: all var(--transition);
 }
-.nav-drawer-close:hover { background: var(--surface-2); }
+.nav-drawer-close:hover { background: var(--surface-2); color: var(--text); }
 
-.nav-drawer-links { flex: 1; padding: 12px 12px; }
+/* Drawer nav links */
+.nav-drawer-links {
+  flex: 1;
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
 .nav-drawer-links a {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   padding: 11px 14px;
   font-size: 14px;
   font-weight: 500;
   border-radius: var(--radius-sm);
   color: var(--text-muted);
-  margin-bottom: 2px;
   transition: all var(--transition);
 }
-.nav-drawer-links a::before {
-  content: '';
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--border);
+.nav-drawer-icon {
+  font-size: 17px;
+  width: 24px;
+  text-align: center;
   flex-shrink: 0;
-  transition: background var(--transition);
+  line-height: 1;
 }
 .nav-drawer-links a:hover { background: var(--surface-2); color: var(--text); }
-.nav-drawer-links a:hover::before { background: var(--accent-mid); }
-.nav-drawer-links a.active { background: var(--accent-light); color: var(--accent); font-weight: 600; }
-.nav-drawer-links a.active::before { background: var(--accent); }
+.nav-drawer-links a.active {
+  background: var(--accent-light);
+  color: var(--accent);
+  font-weight: 600;
+}
 
 .nav-drawer-footer {
-  padding: 16px 20px;
+  padding: 14px 18px;
   border-top: 1px solid var(--border);
+  background: var(--surface-2);
 }
 .nav-drawer-profile {
   width: 100%;
@@ -246,6 +312,7 @@ button { cursor: pointer; font-family: inherit; }
   background: var(--surface);
   color: var(--text-muted);
   text-align: left;
+  cursor: pointer;
   transition: all var(--transition);
 }
 .nav-drawer-profile:hover { border-color: var(--accent); color: var(--accent); }
@@ -1298,24 +1365,6 @@ main {
   .note-layout  { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 540px) {
-  /* main + navbar padding handled by mobile-width block above */
-
-  .cards-grid, .blog-grid, .project-blocks,
-  .gallery-grid, .skills-grid, .quiz-cat-grid { grid-template-columns: 1fr; }
-
-  .stats-grid { grid-template-columns: 1fr 1fr; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
-
-  .hero-text h1 { font-size: 24px; }
-  .quiz-play-sidebar { grid-template-columns: 1fr; }
-  .quiz-controls { flex-direction: column; }
-  .quiz-controls .btn { width: 100%; }
-
-  .quiz-hero { flex-direction: column; }
-  .quiz-hero-stats { width: 100%; justify-content: space-between; }
-}
-
 /* ===== NOTE PAGE MOBILE SPACE OPTIMISATION ===== */
 @media (max-width: 768px) {
   /* note page handled by mobile-width block above */
@@ -1421,8 +1470,8 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
   background: var(--surface);
@@ -1805,28 +1854,8 @@ main::-webkit-scrollbar-track { background: transparent; }
 main::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
 main::-webkit-scrollbar-thumb:hover { background: var(--text-light); }
 
-/* Navbar — tighter, more app-like */
-.navbar {
-  height: 56px;
-  padding: 0 20px;
-  flex-shrink: 0;             /* never shrink in the flex column */
-}
-
-/* Active nav link gets a small bottom indicator */
-.nav-links a.active {
-  position: relative;
-}
-.nav-links a.active::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 16px;
-  height: 2px;
-  background: var(--accent);
-  border-radius: 99px;
-}
+/* Navbar flex-shrink safety */
+.navbar { flex-shrink: 0; }
 
 /* ===== BOTTOM TAB BAR (mobile) ===== */
 .bottom-tab-bar {
@@ -1970,23 +1999,11 @@ main {
 [data-theme="contrast"] .tab-bar-item.active { color: #FFD700; }
 [data-theme="contrast"] .tab-bar-item.active .tab-bar-icon::after { background: #FFD700; }
 
-/* ===== SHOW TAB BAR ON MOBILE ===== */
-@media (max-width: 768px) {
-  .bottom-tab-bar { display: flex; }
-
-  /* hide the desktop nav links on mobile (already hidden, but reinforce) */
-  .nav-links { display: none; }
-  .nav-right  { display: none; }
-  .nav-toggle { display: flex; }
-  .nav-drawer { display: block; }
-}
-
 /* ===== POST PAGE ===== */
 .post-article {
   max-width: 680px;
   margin: 0 auto;
 }
-
 /* Cover image — bleeds to main edges */
 .post-cover {
   margin: 0 -28px 0;   /* negative margin cancels main padding */
@@ -2399,3 +2416,78 @@ main {
 /* Dark theme */
 [data-theme="dark"] .auth-dropdown-logout:hover { background: rgba(239,68,68,0.1); }
 [data-theme="dark"] .auth-gate-toast { background: var(--surface); border-color: var(--border); }
+
+@media (max-width: 540px) {
+  /* main + navbar padding handled by mobile-width block above */
+
+  .cards-grid, .blog-grid, .project-blocks,
+  .gallery-grid, .skills-grid, .quiz-cat-grid { grid-template-columns: 1fr; }
+
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+
+  .hero-text h1 { font-size: 24px; }
+  .quiz-play-sidebar { grid-template-columns: 1fr; }
+  .quiz-controls { flex-direction: column; }
+  .quiz-controls .btn { width: 100%; }
+
+  .quiz-hero { flex-direction: column; }
+  .quiz-hero-stats { width: 100%; justify-content: space-between; }
+}
+
+/* ===== NAVBAR RESPONSIVE ===== */
+
+/* Tablet (769–1024px): keep links but tighter */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .nav-links a { padding: 6px 9px; font-size: 12px; }
+  .navbar { padding: 0 16px; }
+}
+
+/* Mobile (≤768px): hide desktop links, show hamburger */
+@media (max-width: 768px) {
+  .navbar { padding: 0 14px; height: 52px; }
+  .nav-links { display: none; }
+  .nav-right  { display: none; }
+  .nav-toggle { display: flex; }
+  .nav-drawer { display: block; }
+}
+
+/* ===== SHOW TAB BAR ON MOBILE (override) ===== */
+@media (max-width: 768px) {
+  .bottom-tab-bar { display: flex; }
+}
+
+/* Bottom tab bar — nav-toggle inside it acts as "More" button */
+.bottom-tab-bar .nav-toggle {
+  /* reset the hamburger look inside the tab bar */
+  border: none;
+  background: none;
+  width: auto;
+  height: auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  flex: 1;
+  padding: 6px 4px;
+  border-radius: var(--radius-sm);
+  color: var(--text-light);
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  min-width: 0;
+}
+/* hide the three-line spans inside the tab bar toggle */
+.bottom-tab-bar .nav-toggle span { display: none; }
+
+/* Dark theme drawer */
+[data-theme="dark"] .nav-drawer-panel,
+[data-theme="dark"] .nav-drawer-header,
+[data-theme="dark"] .nav-drawer-footer {
+  background: var(--surface);
+  border-color: var(--border);
+}
+[data-theme="dark"] .nav-drawer-header,
+[data-theme="dark"] .nav-drawer-footer { background: var(--surface-2); }
+[data-theme="dark"] .nav-drawer-logo { background: var(--accent); }
+[data-theme="dark"] .bottom-tab-bar { background: rgba(15,23,42,0.94); border-top-color: var(--border); }

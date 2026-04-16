@@ -1,50 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>[ Portfolio ] — App</title>
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
+<?php
+$page_title  = 'App';
+$active_page = 'apps';
+include 'components/head.php';
+?>
 <body>
 
-<nav class="navbar">
-  <div class="nav-logo">[ Logo ]</div>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="works.html">Works</a></li>
-    <li><a href="apps.html" class="active">Apps</a></li>
-    <li><a href="notes.html">Notes</a></li>
-    <li><a href="quiz.html">Quiz</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="working.html">Working</a></li>
-  </ul>
-  <div class="nav-right" data-modal-open="modal-profile">[ Profile ]</div>
-  <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
-</nav>
-
-<!-- Mobile Drawer -->
-<div class="nav-drawer">
-  <div class="nav-drawer-overlay"></div>
-  <div class="nav-drawer-panel">
-    <div class="nav-drawer-header">
-      <div class="nav-drawer-logo">[ Logo ]</div>
-      <button class="nav-drawer-close" aria-label="Close menu">✕</button>
-    </div>
-    <nav class="nav-drawer-links">
-      <a href="index.html">Home</a>
-      <a href="works.html">Works</a>
-      <a href="apps.html" class="active">Apps</a>
-      <a href="notes.html">Notes</a>
-      <a href="quiz.html">Quiz</a>
-      <a href="blog.html">Blog</a>
-      <a href="working.html">Working</a>
-    </nav>
-    <div class="nav-drawer-footer">
-      <button class="nav-drawer-profile" data-modal-open="modal-profile">[ Profile / Admin ]</button>
-    </div>
-  </div>
-</div>
+<?php include 'components/navbar.php'; ?>
 
 <main>
 
@@ -82,7 +43,7 @@
     </div>
   </section>
 
-  <!-- Tabs example -->
+  <!-- Tabs -->
   <section class="section">
     <div class="section-title">Details</div>
     <div class="tabs">
@@ -103,22 +64,12 @@
     </div>
   </section>
 
-  <a href="apps.html"><button class="btn">← [ Back to Apps ]</button></a>
+  <a href="apps.php"><button class="btn">← [ Back to Apps ]</button></a>
 
 </main>
 
-<div class="modal-overlay" id="modal-profile">
-  <div class="modal-box">
-    <div class="modal-header"><strong>[ Profile ]</strong><button class="modal-close">✕</button></div>
-    <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">[ User profile placeholder. ]</p>
-    <a href="admin.html"><button class="btn sm">[ Admin Panel ]</button></a>
-  </div>
-</div>
+<?php include 'components/modal-profile.php'; ?>
 
-
-
-<script src="js/main.js"></script>
-<script src="js/settings.js"></script>
-<script src="js/auth.js"></script>
+<?php include 'components/scripts.php'; ?>
 </body>
 </html>
