@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hasitha Sandakelum — Quiz</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <a class="nav-logo" href="index.html">
+    <div class="nav-logo-badge">HS</div>
+    <span class="nav-logo-name">Hasitha</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="works.html">Works</a></li>
+    <li><a href="apps.html">Apps</a></li>
+    <li><a href="notes.html">Notes</a></li>
+    <li><a href="quiz.html" class="active">Quiz</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="working.html">Working</a></li>
+  </ul>
+  <div class="nav-right-group">
+    <button class="nav-settings-btn" aria-label="Settings" data-settings-open>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+    </button>
+    <div class="nav-right" data-modal-open="modal-profile">Hasitha ▾</div>
+  </div>
+  <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="nav-drawer">
+  <div class="nav-drawer-overlay"></div>
+  <div class="nav-drawer-panel">
+    <div class="nav-drawer-header">
+      <div class="nav-drawer-logo">
+        <div class="nav-drawer-logo-badge">HS</div>
+        <span class="nav-drawer-logo-name">Hasitha</span>
+      </div>
+      <button class="nav-drawer-close" aria-label="Close menu">✕</button>
+    </div>
+    <nav class="nav-drawer-links">
+      <a href="index.html"><span class="nav-drawer-link-icon">🏠</span>Home</a>
+      <a href="works.html"><span class="nav-drawer-link-icon">🗂</span>Works</a>
+      <a href="apps.html"><span class="nav-drawer-link-icon">🧩</span>Apps</a>
+      <a href="notes.html"><span class="nav-drawer-link-icon">📝</span>Notes</a>
+      <a href="quiz.html" class="active"><span class="nav-drawer-link-icon">🧠</span>Quiz</a>
+      <a href="blog.html"><span class="nav-drawer-link-icon">✍️</span>Blog</a>
+      <a href="working.html"><span class="nav-drawer-link-icon">🔭</span>Working</a>
+    </nav>
+    <div class="nav-drawer-footer">
+      <button class="nav-drawer-profile" data-modal-open="modal-profile">Hasitha Sandakelum</button>
+      <button class="nav-drawer-settings" data-settings-open>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        Settings
+      </button>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- Hero Banner -->
+  <section class="section quiz-hero">
+    <div class="quiz-hero-text">
+      <div class="section-title">Quiz Hub</div>
+      <h1 style="font-size:22px;margin-bottom:8px;">Test Your Knowledge</h1>
+      <p style="font-size:13px;color:var(--text-muted);line-height:1.6;max-width:480px;">Pick a category below and start a quiz. Track your score, challenge yourself, and explore different topics.</p>
+    </div>
+    <div class="quiz-hero-stats">
+      <div class="quiz-stat-box"><span class="quiz-stat-num">8</span><span class="quiz-stat-label">Categories</span></div>
+      <div class="quiz-stat-box"><span class="quiz-stat-num">163</span><span class="quiz-stat-label">Questions</span></div>
+      <div class="quiz-stat-box"><span class="quiz-stat-num">0</span><span class="quiz-stat-label">Completed</span></div>
+    </div>
+  </section>
+
+  <!-- Filter -->
+  <section class="section">
+    <div class="section-title">Categories</div>
+
+    <div class="filter-bar" style="margin-bottom:20px;">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="tech">Tech</button>
+      <button class="filter-btn" data-filter="science">Science</button>
+      <button class="filter-btn" data-filter="math">Math</button>
+      <button class="filter-btn" data-filter="language">Language</button>
+      <button class="filter-btn" data-filter="general">General</button>
+    </div>
+
+    <!-- Category Cards Grid -->
+    <div class="quiz-cat-grid" id="quiz-cat-grid">
+
+      <div class="quiz-cat-card" data-category="tech">
+        <div class="quiz-cat-icon">💻</div>
+        <div class="quiz-cat-body">
+          <div class="quiz-cat-title">Web Development</div>
+          <div class="quiz-cat-meta">20 questions · Medium</div>
+          <p class="quiz-cat-desc">HTML, CSS, JavaScript, and web fundamentals.</p>
+          <div class="quiz-cat-tags"><span class="tag">Tech</span><span class="tag">Medium</span></div>
+        </div>
+        <div class="quiz-cat-footer">
+          <div class="quiz-cat-progress-wrap"><div class="quiz-cat-progress-bar" style="width:0%"></div></div>
+          <span class="quiz-cat-progress-label">0 / 20</span>
+          <a href="quiz-play.html?cat=web-dev"><button class="btn primary sm">Start</button></a>
+        </div>
+      </div>
+
+      <div class="quiz-cat-card" data-category="tech">
+        <div class="quiz-cat-icon">🐍</div>
+        <div class="quiz-cat-body">
+          <div class="quiz-cat-title">Python Basics</div>
+          <div class="quiz-cat-meta">15 questions · Easy</div>
+          <p class="quiz-cat-desc">Variables, loops, functions, and data structures.</p>
+          <div class="quiz-cat-tags"><span class="tag">Tech</span><span class="tag">Easy</span></div>
+        </div>
+        <div class="quiz-cat-footer">
+          <div class="quiz-cat-progress-wrap"><div class="quiz-cat-progress-bar" style="width:0%"></div></div>
+          <span class="quiz-cat-progress-label">0 / 15</span>
+          <a href="quiz-play.html?cat=python"><button class="btn primary sm">Start</button></a>
+        </div>
+      </div>
+
+      <div class="quiz-cat-card" data-category="tech">
+        <div class="quiz-cat-icon">🤖</div>
+        <div class="quiz-cat-body">
+          <div class="quiz-cat-title">AI & Machine Learning</div>
+          <div class="quiz-cat-meta">20 questions · Medium</div>
+          <p class="quiz-cat-desc">LLMs, neural networks, prompt engineering, and AI concepts.</p>
+          <div class="quiz-cat-tags"><span class="tag">Tech</span><span class="tag">Medium</span></div>
+        </div>
+        <div class="quiz-cat-footer">
+          <div class="quiz-cat-progress-wrap"><div class="quiz-cat-progress-bar" style="width:0%"></div></div>
+          <span class="quiz-cat-progress-label">0 / 20</span>
+          <a href="quiz-play.html?cat=ai"><button class="btn primary sm">Start</button></a>
+        </div>
+      </div>
+
+      <div class="quiz-cat-card" data-category="science">
+        <div class="quiz-cat-icon">🔬</div>
+        <div class="quiz-cat-body">
+          <div class="quiz-cat-title">Biology</div>
+          <div class="quiz-cat-meta">25 questions · Hard</div>
+          <p class="quiz-cat-desc">Cells, genetics, ecosystems, and human biology.</p>
+          <div class="quiz-cat-tags"><span class="tag">Science</span><span class="tag">Hard</span></div>
+        </div>
+        <div class="quiz-cat-footer">
+          <div class="quiz-cat-progress-wrap"><div class="quiz-cat-progress-bar" style="width:0%"></div></div>
+          <span class="quiz-cat-progress-label">0 / 25</span>
+          <a href="quiz-play.html?cat=biology"><button class="btn primary sm">Start</button></a>
+        </div>
+      </div>
+
+      <div class="quiz-cat-card" data-category="math">
+        <div class="quiz-cat-icon">➗</div>
+        <div class="quiz-cat-body">
+          <div class="quiz-cat-title">Algebra</div>
+          <div class="quiz-cat-meta">18 questions · Medium</div>
+          <p class="quiz-cat-desc">Equations, inequalities, and algebraic expressions.</p>
+          <div class="quiz-cat-tags"><span class="tag">Math</span><span class="tag">Medium</span></div>
+        </div>
+        <div class="quiz-cat-footer">
+          <div class="quiz-cat-progress-wrap"><div class="quiz-cat-progress-bar" style="width:0%"></div></div>
+          <span class="quiz-cat-progress-label">0 / 18</span>
+          <a href="quiz-play.html?cat=algebra"><button class="btn primary sm">Start</button></a>
+        </div>
+      </div>
+
+      <div class="quiz-cat-card" data-category="math">
+        <div class="quiz-cat-icon">📐</div>
+        <div class="quiz-cat-body">
+          <div class="quiz-cat-title">Geometry</div>
+          <div class="quiz-cat-meta">15 questions · Easy</div>
+          <p class="quiz-cat-desc">Shapes, angles, area, and volume calculations.</p>
+          <div class="quiz-cat-tags"><span class="tag">Math</span><span class="tag">Easy</span></div>
+        </div>
+        <div class="quiz-cat-footer">
+          <div class="quiz-cat-progress-wrap"><div class="quiz-cat-progress-bar" style="width:0%"></div></div>
+          <span class="quiz-cat-progress-label">0 / 15</span>
+          <a href="quiz-play.html?cat=geometry"><button class="btn primary sm">Start</button></a>
+        </div>
+      </div>
+
+      <div class="quiz-cat-card" data-category="language">
+        <div class="quiz-cat-icon">📖</div>
+        <div class="quiz-cat-body">
+          <div class="quiz-cat-title">English Grammar</div>
+          <div class="quiz-cat-meta">20 questions · Easy</div>
+          <p class="quiz-cat-desc">Tenses, punctuation, vocabulary, and sentence structure.</p>
+          <div class="quiz-cat-tags"><span class="tag">Language</span><span class="tag">Easy</span></div>
+        </div>
+        <div class="quiz-cat-footer">
+          <div class="quiz-cat-progress-wrap"><div class="quiz-cat-progress-bar" style="width:0%"></div></div>
+          <span class="quiz-cat-progress-label">0 / 20</span>
+          <a href="quiz-play.html?cat=grammar"><button class="btn primary sm">Start</button></a>
+        </div>
+      </div>
+
+      <div class="quiz-cat-card" data-category="general">
+        <div class="quiz-cat-icon">🌍</div>
+        <div class="quiz-cat-body">
+          <div class="quiz-cat-title">General Knowledge</div>
+          <div class="quiz-cat-meta">30 questions · Mixed</div>
+          <p class="quiz-cat-desc">History, geography, culture, and current events.</p>
+          <div class="quiz-cat-tags"><span class="tag">General</span><span class="tag">Mixed</span></div>
+        </div>
+        <div class="quiz-cat-footer">
+          <div class="quiz-cat-progress-wrap"><div class="quiz-cat-progress-bar" style="width:0%"></div></div>
+          <span class="quiz-cat-progress-label">0 / 30</span>
+          <a href="quiz-play.html?cat=general"><button class="btn primary sm">Start</button></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Recent Results -->
+  <section class="section">
+    <div class="section-title">Recent Results</div>
+    <p style="font-size:13px;color:var(--text-muted);">No quiz results yet. Start a quiz above to track your progress.</p>
+  </section>
+
+</main>
+
+<div class="modal-overlay" id="modal-profile">
+  <div class="modal-box">
+    <div class="modal-header">
+      <strong>Hasitha Sandakelum</strong>
+      <button class="modal-close">✕</button>
+    </div>
+    <p style="font-size:13px;color:var(--accent);font-weight:600;margin-bottom:6px;">Full-Stack Dev &amp; AI Builder</p>
+    <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;line-height:1.5;">BICT Undergrad @ University of Ruhuna · Colombo, Sri Lanka</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;">
+      <a href="https://github.com/dev-sandakelum/" target="_blank" rel="noopener" class="btn sm">GitHub ↗</a>
+      <a href="https://www.linkedin.com/in/hasitha-sandakelum/" target="_blank" rel="noopener" class="btn sm">LinkedIn ↗</a>
+      <a href="https://www.youtube.com/@hasitha_sandakelum" target="_blank" rel="noopener" class="btn sm">YouTube ↗</a>
+    </div>
+    <a href="admin.html"><button class="btn sm primary">⚙ Admin Panel</button></a>
+  </div>
+</div>
+
+
+
+<script src="js/main.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/auth.js"></script>
+<script>
+  // Category filter for quiz cards
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.quiz-cat-card').forEach(card => {
+        card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
+      });
+    });
+  });
+</script>
+</body>
+</html>

@@ -177,10 +177,12 @@ document.addEventListener('click', () => {
     const a = document.createElement('a');
     a.href = t.href;
     a.className = 'tab-bar-item';
+    a.setAttribute('aria-label', t.label);
     if (t.href === currentPage || (currentPage === '' && t.href === 'index.html')) {
       a.classList.add('active');
     }
-    a.innerHTML = `<span class="tab-bar-icon">${t.icon}</span><span class="tab-bar-label">${t.label}</span>`;
+    // Icon only — no label text
+    a.innerHTML = `<span class="tab-bar-icon" aria-hidden="true">${t.icon}</span>`;
     bar.appendChild(a);
   });
 

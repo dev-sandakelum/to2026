@@ -3,13 +3,13 @@
     "title": "Hasitha Sandakelum",
     "logo": "",
     "footer_text": "Built by Hasitha Sandakelum",
-    "copyright_year": "2025"
+    "copyright_year": "2026"
   },
 
   "profile": {
     "full_name": "Hasitha Sandakelum",
     "role": "Full-Stack Dev & AI Builder",
-    "bio": "A Full-Stack Developer and AI Builder specializing in Next.js, TypeScript, and Firebase. Currently pursuing a Bachelor's degree in Information & Communication Technology at the University of Ruhuna. Passionate about building AI-powered applications and digital solutions. Certified in Web Development, Responsive Web Design, and AI Agent Building.",
+    "bio": "A Full-Stack Developer and AI Builder specializing in Next.js, TypeScript, and Firebase. Currently pursuing a Bachelor's degree in Information & Communication Technology at the University of Ruhuna, Sri Lanka. Passionate about building AI-powered applications, cloud solutions, and real-time systems. Certified in Web Development, Responsive Web Design, AI Agent Building, and multiple Microsoft & AWS technologies.",
     "avatar_url": "",
     "email": "dev.sandakelum@gmail.com",
     "location": "Colombo, Western Province, Sri Lanka",
@@ -27,13 +27,36 @@
   "skills": [
     { "name": "Next.js" },
     { "name": "TypeScript" },
+    { "name": "React.js" },
+    { "name": "JavaScript" },
+    { "name": "HTML5" },
+    { "name": "Cascading Style Sheets (CSS)" },
+    { "name": "PHP" },
+    { "name": "Python" },
+    { "name": "C" },
+    { "name": "C#" },
+    { "name": "SQL" },
+    { "name": "MongoDB" },
     { "name": "Firebase" },
     { "name": "Amazon Web Services (AWS)" },
-    { "name": "Postman API" },
+    { "name": "Microsoft Azure" },
+    { "name": "Cloud Computing" },
+    { "name": "Machine Learning" },
+    { "name": "Artificial Intelligence (AI)" },
     { "name": "Large Language Models (LLM)" },
+    { "name": "Computer Vision" },
+    { "name": "TensorFlow" },
+    { "name": "GitHub Models" },
+    { "name": "Postman API" },
+    { "name": "Prompt Writing" },
+    { "name": "AI Prompting" },
+    { "name": "Optical Character Recognition (OCR)" },
+    { "name": "Responsive Web Design" },
+    { "name": "State Management" },
+    { "name": "Automation" },
     { "name": "Critical Thinking" },
-    { "name": "AI Agent Building" },
-    { "name": "Responsive Web Design" }
+    { "name": "Team Leadership" },
+    { "name": "Problem Solving" }
   ],
 
   "experience": [
@@ -44,23 +67,107 @@
       "start_date": "2024-08",
       "end_date": "2025-01",
       "current": false,
-      "description": "Gained practical exposure to technology solutions during a 6-month traineeship. Worked with tools including Postman API and Large Language Models (LLM)."
+      "description": "Gained practical exposure to technology solutions during a 6-month traineeship. Worked with tools including Postman API and Large Language Models (LLM), contributing to technological innovation and digital solutions."
+    },
+    {
+      "job_title": "ICT Representative (Volunteer)",
+      "company": "University of Ruhuna",
+      "location": "Sri Lanka",
+      "start_date": "2025-07",
+      "end_date": "2026-03",
+      "current": false,
+      "description": "Represented the batch as the primary ICT liaison between students and faculty. Coordinated ICT-related announcements, updates, and communications within the batch. Supported classmates with technology-related concerns and participated in batch meetings to convey ICT matters to relevant parties."
     }
   ],
 
   "projects": [
     {
-      "id": "",
-      "title": "",
-      "slug": "",
-      "category": "",
-      "tags": [],
-      "description": "",
+      "id": "nexera",
+      "title": "NexEra – Full-Stack Academic Learning Platform",
+      "slug": "nexera",
+      "category": "Full-Stack",
+      "tags": ["Next.js", "TypeScript", "Firebase", "Clerk", "Supabase", "Framer Motion"],
+      "description": "A full-stack academic learning platform built for university students to access, organize, and interact with study materials — including Markdown notes, PDFs, and quizzes — all in one place.",
       "hero_image": "",
       "gallery": [],
-      "problem": "",
-      "solution": "",
-      "result": "",
+      "problem": "University students lacked a centralized, organized platform to access study materials, take quizzes, and track their academic progress across subjects.",
+      "solution": "Built NexEra with a Markdown notes system, PDF viewer, real-time quiz engine with auto-save, an admin dashboard for role-based content management, and full mobile responsiveness.",
+      "result": "A production-ready academic platform with Firebase-backed server caching, cross-device sync, and Light/Dark/Contrast theme switching — actively serving university students.",
+      "featured": true,
+      "url": ""
+    },
+    {
+      "id": "birthday-post-creator",
+      "title": "Birthday Post Creator",
+      "slug": "birthday-post-creator",
+      "category": "Full-Stack",
+      "tags": ["Next.js", "TypeScript", "Canvas API", "AI", "React"],
+      "description": "A professional web application that automates birthday post creation for the university student union's social media channels, reducing a 30-minute manual process to under 2 minutes.",
+      "hero_image": "",
+      "gallery": [],
+      "problem": "The student media team spent hours creating individualized birthday posts using traditional design software, resulting in inconsistent quality and bottlenecks during busy periods.",
+      "solution": "Built a custom web app with multiple professional templates, a Canvas-based image editor with zoom/crop/rotate, AI-powered message generation, and one-click HD export at 1080x1350px.",
+      "result": "Reduced post creation time by 95%. Generated 50+ professional posts in the first month with 100% design consistency. Deployed officially to 15+ student union members of the 9th Batch.",
+      "featured": true,
+      "url": ""
+    },
+    {
+      "id": "ai-question-generator",
+      "title": "AI Question Generator (Q-Gen)",
+      "slug": "ai-question-generator",
+      "category": "AI / EdTech",
+      "tags": ["Next.js", "TypeScript", "MongoDB", "Groq AI", "OpenRouter", "Vercel"],
+      "description": "An AI-powered platform that generates contextual questions from course materials and provides automated evaluation with detailed feedback. Perfect for exam preparation and self-assessment.",
+      "hero_image": "",
+      "gallery": [],
+      "problem": "Students lacked an intelligent tool to generate practice questions from their study materials and receive instant, personalized feedback on their answers.",
+      "solution": "Built Q-Gen with unlimited question generation, AI-powered 1–5 star evaluation, personalized feedback, and a multi-provider API rotation system (Groq + OpenRouter) for 99.9% uptime at zero cost.",
+      "result": "Achieved 99.9% uptime via multi-key rotation across 3+ API keys with 10x more free tokens — supporting Computer Networks, Programming, and Information Systems subjects.",
+      "featured": true,
+      "url": ""
+    },
+    {
+      "id": "ai-math-solver",
+      "title": "AI Math Solver",
+      "slug": "ai-math-solver",
+      "category": "AI",
+      "tags": ["Next.js", "TypeScript", "Groq AI", "Tesseract.js", "OCR"],
+      "description": "A personal AI-powered math solver supporting image upload with OCR text extraction, step-by-step solutions, and multi-type math support including Algebra, Calculus, Trigonometry, and more.",
+      "hero_image": "",
+      "gallery": [],
+      "problem": "Needed a personal tool to solve complex math problems with step-by-step explanations, including support for handwritten problems via image upload.",
+      "solution": "Built a solver with Tesseract.js OCR for image-to-text extraction, Groq AI for step-by-step solutions, custom math symbol keyboards, and a multi-key API rotation system for 40,000+ free requests/day.",
+      "result": "Achieved 40,000+ free requests/day combining multiple API keys. 99% uptime during testing at $0 cost. Great learning experience in distributed systems and AI integration.",
+      "featured": false,
+      "url": ""
+    },
+    {
+      "id": "developme",
+      "title": "DevelopME – Real-Time Messaging Platform",
+      "slug": "developme",
+      "category": "Full-Stack",
+      "tags": ["PHP", "MySQL", "JavaScript", "jQuery", "AJAX", "HTML5", "CSS3"],
+      "description": "A real-time messaging platform built from scratch to demonstrate full-stack development skills, covering backend logic, database design, and frontend interaction.",
+      "hero_image": "",
+      "gallery": [],
+      "problem": "Needed a hands-on full-stack project to demonstrate real-time communication, secure authentication, and role-based access control using core web technologies.",
+      "solution": "Built DevelopME with real-time AJAX messaging, hashed password authentication, cookie-based sessions, role-based access (Owner/Admin/User), admin moderation dashboard, and server maintenance mode.",
+      "result": "A fully functional real-time messaging platform deployed at developme.mywebcommunity.org, demonstrating end-to-end full-stack skills with responsive design across all devices.",
+      "featured": false,
+      "url": "http://developme.mywebcommunity.org"
+    },
+    {
+      "id": "digital-voting-system",
+      "title": "Digital Voting System (DVS)",
+      "slug": "digital-voting-system",
+      "category": "Systems",
+      "tags": ["C", "Console Application", "University Project"],
+      "description": "A comprehensive console-based election voting system built in C that simulates Sri Lanka's parliamentary election process, developed as a university project.",
+      "hero_image": "",
+      "gallery": [],
+      "problem": "University assignment requiring a secure, functional voting simulation that mirrors real-world parliamentary election processes.",
+      "solution": "Built a C console application featuring secure voter registration, multi-party candidate selection, and real-time results tracking.",
+      "result": "Successfully completed as a university project demonstrating core systems programming skills in C, including file management and console application design.",
       "featured": false,
       "url": ""
     }
@@ -75,19 +182,8 @@
       "description": "",
       "how_to_use": "",
       "about": "",
-      "changelog": [
-        {
-          "version": "",
-          "notes": ""
-        }
-      ],
-      "fields": [
-        {
-          "label": "",
-          "type": "",
-          "placeholder": ""
-        }
-      ],
+      "changelog": [{ "version": "", "notes": "" }],
+      "fields": [{ "label": "", "type": "", "placeholder": "" }],
       "status": ""
     }
   ],
@@ -102,13 +198,7 @@
       "preview": "",
       "created_at": "",
       "updated_at": "",
-      "sections": [
-        {
-          "id": "",
-          "heading": "",
-          "content": ""
-        }
-      ]
+      "sections": [{ "id": "", "heading": "", "content": "" }]
     }
   ],
 
@@ -124,34 +214,118 @@
       "published_at": "",
       "read_time": "",
       "status": "",
-      "sections": [
-        {
-          "id": "",
-          "heading": "",
-          "content": ""
-        }
-      ]
+      "sections": [{ "id": "", "heading": "", "content": "" }]
+    }
+  ],
+
+  "certifications": [
+    {
+      "name": "Certificate of completion: Claude 101",
+      "authority": "Anthropic",
+      "url": "https://verify.skilljar.com/c/ds9aa8aoqfo8",
+      "finished_on": "2026-03",
+      "license_number": "ds9aa8aoqfo8"
+    },
+    {
+      "name": "Microsoft Applied Skills: Streamline business workflows with AI chat",
+      "authority": "Microsoft",
+      "url": "https://learn.microsoft.com/api/credentials/share/en-us/HasithaSandakelum/EA78F87E296351D?sharingId",
+      "finished_on": "2026-03",
+      "license_number": "EA78F87E296351D"
+    },
+    {
+      "name": "Postman API Fundamentals Student Expert",
+      "authority": "Postman",
+      "url": "https://api.badgr.io/public/assertions/96kPkcMHSpi830wfC-80hg",
+      "finished_on": "2026-03",
+      "license_number": "96kPkcMHSpi830wfC-80hg"
+    },
+    {
+      "name": "MongoDB Skill Badges",
+      "authority": "MongoDB",
+      "url": "https://www.credly.com/users/hasitha-sandakelum/badges#credly",
+      "finished_on": "2026-03",
+      "license_number": ""
+    },
+    {
+      "name": "Microsoft Student Champs",
+      "authority": "Microsoft Learn Student Ambassadors - Sri Lanka",
+      "url": "",
+      "finished_on": "2026-03",
+      "license_number": "MSC2026022842"
+    },
+    {
+      "name": "AI/ML Engineer - Stage 1",
+      "authority": "SLIIT",
+      "url": "https://code.sliit.org/certificates/z0h8gwzmom",
+      "finished_on": "2026-01",
+      "license_number": "z0h8gwzmom"
+    },
+    {
+      "name": "Building AI Agents with Microsoft Foundry",
+      "authority": "Microsoft Learn Student Ambassadors - Sri Lanka",
+      "url": "https://zaselalk.github.io/Event-Azure-Foundry-2025/?v=JN8GG4F6M1X7",
+      "finished_on": "2025-12",
+      "license_number": "JN8GG4F6M1X7"
+    },
+    {
+      "name": "Cloud 102: Powered by AWS",
+      "authority": "AWS Cloud Club – NIBM",
+      "url": "",
+      "finished_on": "2026-03",
+      "license_number": ""
+    },
+    {
+      "name": "Critical Thinking in the AI Era",
+      "authority": "HP",
+      "url": "",
+      "finished_on": "2026-04",
+      "license_number": "bb7e183e-8c18-41c3-929b-5423766ee521"
+    },
+    {
+      "name": "Responsive Web Design",
+      "authority": "freeCodeCamp",
+      "url": "https://freecodecamp.org/certification/fcc11391a55-e8a6-464b-86fa-44f31d648949/responsive-web-design",
+      "finished_on": "2025-01",
+      "license_number": "fcc11391a55-e8a6-464b-86fa-44f31d648949-rwd"
+    },
+    {
+      "name": "Web Development",
+      "authority": "HackerRank",
+      "url": "https://www.hackerrank.com/certificates/iframe/ac053a375b67",
+      "finished_on": "2025-01",
+      "license_number": "AC053A375867"
+    }
+  ],
+
+  "education": [
+    {
+      "school": "University of Ruhuna",
+      "degree": "Bachelor's degree",
+      "field": "Information & Communication Technology",
+      "start_date": "2025-07",
+      "end_date": "",
+      "current": true
+    },
+    {
+      "school": "Bandaranayake College - Gampaha",
+      "degree": "A/L",
+      "field": "Information Technology",
+      "start_date": "2015-01",
+      "end_date": "2024-07",
+      "current": false
     }
   ],
 
   "quiz": {
-    "hub": {
-      "title": "",
-      "description": "",
-      "total_categories": "",
-      "total_questions": ""
-    },
+    "hub": { "title": "", "description": "", "total_categories": "", "total_questions": "" },
     "categories": [],
     "quizzes": [],
     "results": []
   },
 
   "working": {
-    "kanban": {
-      "todo": [],
-      "in_progress": [],
-      "done": []
-    },
+    "kanban": { "todo": [], "in_progress": [], "done": [] },
     "logs": [],
     "reading_list": []
   },
@@ -167,10 +341,10 @@
       "show_apps": true
     },
     "dashboard": {
-      "total_apps": "",
-      "total_notes": "",
-      "total_posts": "",
-      "total_views": ""
+      "total_apps": "0",
+      "total_notes": "0",
+      "total_posts": "0",
+      "total_views": "0"
     },
     "analytics": {
       "visitors": "",
@@ -183,7 +357,7 @@
   "footer": {
     "columns": [
       {
-        "heading": "Links",
+        "heading": "Social",
         "links": [
           { "label": "GitHub", "url": "https://github.com/dev-sandakelum/" },
           { "label": "LinkedIn", "url": "https://www.linkedin.com/in/hasitha-sandakelum/" },

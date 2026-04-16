@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hasitha Sandakelum — Project</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <a class="nav-logo" href="index.html">
+    <div class="nav-logo-badge">HS</div>
+    <span class="nav-logo-name">Hasitha</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="works.html" class="active">Works</a></li>
+    <li><a href="apps.html">Apps</a></li>
+    <li><a href="notes.html">Notes</a></li>
+    <li><a href="quiz.html">Quiz</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="working.html">Working</a></li>
+  </ul>
+  <div class="nav-right-group">
+    <button class="nav-settings-btn" aria-label="Settings" data-settings-open>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+    </button>
+    <div class="nav-right" data-modal-open="modal-profile">Hasitha ▾</div>
+  </div>
+  <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- Mobile Drawer -->
+<div class="nav-drawer">
+  <div class="nav-drawer-overlay"></div>
+  <div class="nav-drawer-panel">
+    <div class="nav-drawer-header">
+      <div class="nav-drawer-logo">
+        <div class="nav-drawer-logo-badge">HS</div>
+        <span class="nav-drawer-logo-name">Hasitha</span>
+      </div>
+      <button class="nav-drawer-close" aria-label="Close menu">✕</button>
+    </div>
+    <nav class="nav-drawer-links">
+      <a href="index.html"><span class="nav-drawer-link-icon">🏠</span>Home</a>
+      <a href="works.html" class="active"><span class="nav-drawer-link-icon">🗂</span>Works</a>
+      <a href="apps.html"><span class="nav-drawer-link-icon">🧩</span>Apps</a>
+      <a href="notes.html"><span class="nav-drawer-link-icon">📝</span>Notes</a>
+      <a href="quiz.html"><span class="nav-drawer-link-icon">🧠</span>Quiz</a>
+      <a href="blog.html"><span class="nav-drawer-link-icon">✍️</span>Blog</a>
+      <a href="working.html"><span class="nav-drawer-link-icon">🔭</span>Working</a>
+    </nav>
+    <div class="nav-drawer-footer">
+      <button class="nav-drawer-profile" data-modal-open="modal-profile">Hasitha Sandakelum</button>
+      <button class="nav-drawer-settings" data-settings-open>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        Settings
+      </button>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- Hero Image -->
+  <section class="section" style="padding:0;overflow:hidden;margin-bottom:24px;">
+    <div class="placeholder-img xl" style="border:none;border-radius:4px;">Hero Project Image</div>
+  </section>
+
+  <!-- Title + Intro -->
+  <section class="section">
+    <div class="section-title">Project</div>
+    <h1 style="font-size:22px;margin-bottom:8px;">NexEra – Full-Stack Academic Learning Platform</h1>
+    <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;line-height:1.6;">A full-stack academic learning platform built for university students to access, organize, and interact with study materials — including Markdown notes, PDFs, and quizzes — all in one place.</p>
+    <div class="card-tags">
+      <span class="tag">Next.js</span>
+      <span class="tag">TypeScript</span>
+      <span class="tag">Firebase</span>
+      <span class="tag">Full-Stack</span>
+    </div>
+  </section>
+
+  <!-- Problem / Solution / Result -->
+  <div class="project-blocks">
+    <div class="project-block">
+      <h3>Problem</h3>
+      <p>University students lacked a centralized, organized platform to access study materials, take quizzes, and track their academic progress across subjects.</p>
+    </div>
+    <div class="project-block">
+      <h3>Solution</h3>
+      <p>Built NexEra with a Markdown notes system, PDF viewer, real-time quiz engine with auto-save, an admin dashboard for role-based content management, and full mobile responsiveness.</p>
+    </div>
+    <div class="project-block">
+      <h3>Result</h3>
+      <p>A production-ready academic platform with Firebase-backed server caching, cross-device sync, and Light/Dark/Contrast theme switching — actively serving university students.</p>
+    </div>
+  </div>
+
+  <!-- Gallery -->
+  <section class="section">
+    <div class="section-title">Gallery</div>
+    <div class="gallery-grid">
+      <div class="placeholder-img md">Screenshot 1</div>
+      <div class="placeholder-img md">Screenshot 2</div>
+      <div class="placeholder-img md">Screenshot 3</div>
+      <div class="placeholder-img md">Screenshot 4</div>
+      <div class="placeholder-img md">Screenshot 5</div>
+      <div class="placeholder-img md">Screenshot 6</div>
+    </div>
+  </section>
+
+  <div style="margin-top:8px;">
+    <a href="works.html"><button class="btn">← Back to Works</button></a>
+  </div>
+
+</main>
+
+<div class="modal-overlay" id="modal-profile">
+  <div class="modal-box">
+    <div class="modal-header">
+      <strong>Hasitha Sandakelum</strong>
+      <button class="modal-close">✕</button>
+    </div>
+    <p style="font-size:13px;color:var(--accent);font-weight:600;margin-bottom:6px;">Full-Stack Dev &amp; AI Builder</p>
+    <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;line-height:1.5;">BICT Undergrad @ University of Ruhuna · Colombo, Sri Lanka</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;">
+      <a href="https://github.com/dev-sandakelum/" target="_blank" rel="noopener" class="btn sm">GitHub ↗</a>
+      <a href="https://www.linkedin.com/in/hasitha-sandakelum/" target="_blank" rel="noopener" class="btn sm">LinkedIn ↗</a>
+      <a href="https://www.youtube.com/@hasitha_sandakelum" target="_blank" rel="noopener" class="btn sm">YouTube ↗</a>
+    </div>
+    <a href="admin.html"><button class="btn sm primary">⚙ Admin Panel</button></a>
+  </div>
+</div>
+
+
+
+<script src="js/main.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

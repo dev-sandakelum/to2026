@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hasitha Sandakelum — Note</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="page-note">
+
+<nav class="navbar">
+  <a class="nav-logo" href="index.html">
+    <div class="nav-logo-badge">HS</div>
+    <span class="nav-logo-name">Hasitha</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="works.html">Works</a></li>
+    <li><a href="apps.html">Apps</a></li>
+    <li><a href="notes.html" class="active">Notes</a></li>
+    <li><a href="quiz.html">Quiz</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="working.html">Working</a></li>
+  </ul>
+  <div class="nav-right-group">
+    <button class="nav-settings-btn" aria-label="Settings" data-settings-open>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+    </button>
+    <div class="nav-right" data-modal-open="modal-profile">Hasitha ▾</div>
+  </div>
+  <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- Mobile Drawer -->
+<div class="nav-drawer">
+  <div class="nav-drawer-overlay"></div>
+  <div class="nav-drawer-panel">
+    <div class="nav-drawer-header">
+      <div class="nav-drawer-logo">
+        <div class="nav-drawer-logo-badge">HS</div>
+        <span class="nav-drawer-logo-name">Hasitha</span>
+      </div>
+      <button class="nav-drawer-close" aria-label="Close menu">✕</button>
+    </div>
+    <nav class="nav-drawer-links">
+      <a href="index.html"><span class="nav-drawer-link-icon">🏠</span>Home</a>
+      <a href="works.html"><span class="nav-drawer-link-icon">🗂</span>Works</a>
+      <a href="apps.html"><span class="nav-drawer-link-icon">🧩</span>Apps</a>
+      <a href="notes.html" class="active"><span class="nav-drawer-link-icon">📝</span>Notes</a>
+      <a href="quiz.html"><span class="nav-drawer-link-icon">🧠</span>Quiz</a>
+      <a href="blog.html"><span class="nav-drawer-link-icon">✍️</span>Blog</a>
+      <a href="working.html"><span class="nav-drawer-link-icon">🔭</span>Working</a>
+    </nav>
+    <div class="nav-drawer-footer">
+      <button class="nav-drawer-profile" data-modal-open="modal-profile">Hasitha Sandakelum</button>
+      <button class="nav-drawer-settings" data-settings-open>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        Settings
+      </button>
+    </div>
+  </div>
+</div>
+
+<main>
+  <div class="note-layout">
+
+    <!-- Desktop Sidebar TOC -->
+    <aside class="note-sidebar">
+      <h4>Contents</h4>
+      <a href="#sec1">Introduction</a>
+      <a href="#sec2">Key Concepts</a>
+      <a href="#sec3">Examples</a>
+      <a href="#sec4">Best Practices</a>
+      <a href="#sec5">Summary</a>
+      <div style="margin-top:16px;">
+        <a href="notes.html"><button class="btn sm" style="width:100%;">← Back</button></a>
+      </div>
+    </aside>
+
+    <!-- Content -->
+    <div class="note-content">
+      <div class="section">
+        <div class="section-title">Note</div>
+        <h2>Note Title</h2>
+        <div class="card-tags" style="margin-bottom:16px;"><span class="tag">Dev</span><span class="tag">Reference</span></div>
+
+        <div class="content-block" id="sec1">
+          <h3>Introduction</h3>
+          <p>This is a sample note. Add your content here. Notes support multiple sections with headings for easy navigation.</p>
+        </div>
+
+        <div class="content-block" id="sec2">
+          <h3>Key Concepts</h3>
+          <p>Outline the main ideas, definitions, or concepts relevant to this topic.</p>
+        </div>
+
+        <div class="content-block" id="sec3">
+          <h3>Examples</h3>
+          <p>Provide practical examples, code snippets, or case studies to illustrate the concepts.</p>
+        </div>
+
+        <div class="content-block" id="sec4">
+          <h3>Best Practices</h3>
+          <p>List recommended approaches, tips, and things to avoid.</p>
+        </div>
+
+        <div class="content-block" id="sec5">
+          <h3>Summary</h3>
+          <p>A concise recap of the key takeaways from this note.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- Mobile TOC Drawer (right side) -->
+<div class="toc-drawer" id="toc-drawer">
+  <div class="toc-drawer-overlay" id="toc-overlay"></div>
+  <div class="toc-drawer-panel">
+    <div class="toc-drawer-header">
+      <span class="toc-drawer-title">Contents</span>
+      <button class="toc-drawer-close" id="toc-close" aria-label="Close contents">✕</button>
+    </div>
+    <nav class="toc-drawer-links">
+      <a href="#sec1">Introduction</a>
+      <a href="#sec2">Key Concepts</a>
+      <a href="#sec3">Examples</a>
+      <a href="#sec4">Best Practices</a>
+      <a href="#sec5">Summary</a>
+    </nav>
+    <div class="toc-drawer-footer">
+      <a href="notes.html"><button class="btn sm" style="width:100%;">← Back to Notes</button></a>
+    </div>
+  </div>
+</div>
+<!-- Floating TOC trigger (mobile only) -->
+<button class="toc-fab" id="toc-fab" aria-label="Open contents">
+  <span class="toc-fab-icon">☰</span>
+  <span class="toc-fab-label">Contents</span>
+</button>
+
+<div class="modal-overlay" id="modal-profile">
+  <div class="modal-box">
+    <div class="modal-header">
+      <strong>Hasitha Sandakelum</strong>
+      <button class="modal-close">✕</button>
+    </div>
+    <p style="font-size:13px;color:var(--accent);font-weight:600;margin-bottom:6px;">Full-Stack Dev &amp; AI Builder</p>
+    <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;line-height:1.5;">BICT Undergrad @ University of Ruhuna · Colombo, Sri Lanka</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;">
+      <a href="https://github.com/dev-sandakelum/" target="_blank" rel="noopener" class="btn sm">GitHub ↗</a>
+      <a href="https://www.linkedin.com/in/hasitha-sandakelum/" target="_blank" rel="noopener" class="btn sm">LinkedIn ↗</a>
+      <a href="https://www.youtube.com/@hasitha_sandakelum" target="_blank" rel="noopener" class="btn sm">YouTube ↗</a>
+    </div>
+    <a href="admin.html"><button class="btn sm primary">⚙ Admin Panel</button></a>
+  </div>
+</div>
+
+
+
+<script src="js/main.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/auth.js"></script>
+<script>
+  const tocDrawer  = document.getElementById('toc-drawer');
+  const tocOverlay = document.getElementById('toc-overlay');
+  const tocClose   = document.getElementById('toc-close');
+  const tocFab     = document.getElementById('toc-fab');
+
+  function openToc() {
+    tocDrawer.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeToc() {
+    tocDrawer.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  tocFab.addEventListener('click', openToc);
+  tocClose.addEventListener('click', closeToc);
+  tocOverlay.addEventListener('click', closeToc);
+
+  // close on link tap so user lands on section
+  document.querySelectorAll('.toc-drawer-links a').forEach(a => {
+    a.addEventListener('click', closeToc);
+  });
+</script>
+</body>
+</html>

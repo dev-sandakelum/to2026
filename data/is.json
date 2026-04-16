@@ -1,0 +1,118 @@
+[
+  {
+    "id": "intro",
+    "title": "Introduction to IS",
+    "content": [
+      {
+        "title": "Core Concepts",
+        "items": [
+          {
+            "type": "qa",
+            "question": "What is an Information System?",
+            "answer": "An Information System (IS) is a formal, sociotechnical, organizational system designed to collect, process, store, and distribute information. In a broader sense, it is a combination of hardware, software, and telecommunications networks that people build and use to collect, create, and distribute useful data."
+          },
+          {
+            "type": "highlight",
+            "title": "Data vs. Information",
+            "content": [
+              "Data: Raw facts and figures without context (e.g., a list of numbers).",
+              "Information: Data that has been processed, organized, and structured to be meaningful (e.g., a monthly sales report)."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "components",
+    "title": "Components of IS",
+    "content": [
+      {
+        "title": "The Five-Component Model",
+        "items": [
+          {
+            "type": "text",
+            "content": "A standard Information System is composed of five major components that interact to produce information:"
+          },
+          {
+            "type": "list",
+            "content": [
+              "Hardware: The physical devices (servers, workstations, mobile devices).",
+              "Software: The programs and applications that instruct the hardware.",
+              "Data: The bridge between the machine side and the human side.",
+              "Procedures: The rules and instructions for the people using the system.",
+              "People: The most important component; those who operate and use the system."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "types",
+    "title": "Types of Systems",
+    "content": [
+      {
+        "title": "Organizational Hierarchy",
+        "items": [
+          {
+            "type": "subsection",
+            "title": "Transaction Processing Systems (TPS)",
+            "content": "Focuses on the daily, routine transactions necessary to conduct business.",
+            "items": [
+              {
+                "type": "text",
+                "content": "Example: Point-of-Sale (POS) systems or payroll processing."
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "Management Information Systems (MIS)",
+            "content": "Provides middle management with reports on the organization's current performance.",
+            "items": [
+              {
+                "type": "text",
+                "content": "Example: Inventory status reports or annual budgets."
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "Decision Support Systems (DSS)",
+            "content": "Focuses on problems that are unique and rapidly changing; provides data-driven support for non-routine decisions.",
+            "items": [
+              {
+                "type": "qa",
+                "question": "Who uses DSS?",
+                "answer": "Senior and middle management use these systems to analyze internal and external data for strategic planning."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "lifecycle",
+    "title": "SDLC",
+    "content": [
+      {
+        "title": "Systems Development Life Cycle",
+        "items": [
+          {
+            "type": "highlight",
+            "title": "The Waterfall Model Phases",
+            "content": [
+              "1. Planning: Defining the scope and objectives.",
+              "2. Analysis: Determining user requirements.",
+              "3. Design: Creating the system blueprint.",
+              "4. Implementation: Coding and installing the system.",
+              "5. Maintenance: Updating and fixing the system over time."
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
