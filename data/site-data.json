@@ -1,41 +1,50 @@
 {
   "site": {
-    "title": "",
+    "title": "Hasitha Sandakelum",
     "logo": "",
-    "footer_text": "",
-    "copyright_year": ""
+    "footer_text": "Built by Hasitha Sandakelum",
+    "copyright_year": "2025"
   },
 
   "profile": {
-    "full_name": "",
-    "role": "",
-    "bio": "",
+    "full_name": "Hasitha Sandakelum",
+    "role": "Full-Stack Dev & AI Builder",
+    "bio": "A Full-Stack Developer and AI Builder specializing in Next.js, TypeScript, and Firebase. Currently pursuing a Bachelor's degree in Information & Communication Technology at the University of Ruhuna. Passionate about building AI-powered applications and digital solutions. Certified in Web Development, Responsive Web Design, and AI Agent Building.",
     "avatar_url": "",
-    "email": "",
-    "location": "",
+    "email": "dev.sandakelum@gmail.com",
+    "location": "Colombo, Western Province, Sri Lanka",
     "social": {
       "twitter": "",
-      "linkedin": "",
-      "github": "",
-      "website": ""
+      "linkedin": "https://www.linkedin.com/in/hasitha-sandakelum/",
+      "github": "https://github.com/dev-sandakelum/",
+      "website": "",
+      "whatsapp": "https://whatsapp.com/channel/0029VbCDy0fCxoAr9HjWEG1r",
+      "tiktok": "https://www.tiktok.com/@hasitha_san_",
+      "youtube": "https://www.youtube.com/@hasitha_sandakelum"
     }
   },
 
   "skills": [
-    { "name": "" },
-    { "name": "" },
-    { "name": "" }
+    { "name": "Next.js" },
+    { "name": "TypeScript" },
+    { "name": "Firebase" },
+    { "name": "Amazon Web Services (AWS)" },
+    { "name": "Postman API" },
+    { "name": "Large Language Models (LLM)" },
+    { "name": "Critical Thinking" },
+    { "name": "AI Agent Building" },
+    { "name": "Responsive Web Design" }
   ],
 
   "experience": [
     {
-      "job_title": "",
-      "company": "",
-      "location": "",
-      "start_date": "",
-      "end_date": "",
+      "job_title": "Associate Trainee",
+      "company": "OREL IT",
+      "location": "Navinna, Sri Lanka",
+      "start_date": "2024-08",
+      "end_date": "2025-01",
       "current": false,
-      "description": ""
+      "description": "Gained practical exposure to technology solutions during a 6-month traineeship. Worked with tools including Postman API and Large Language Models (LLM)."
     }
   ],
 
@@ -132,82 +141,26 @@
       "total_categories": "",
       "total_questions": ""
     },
-    "categories": [
-      {
-        "id": "",
-        "title": "",
-        "slug": "",
-        "icon": "",
-        "group": "",
-        "difficulty": "",
-        "description": "",
-        "total_questions": "",
-        "progress": {
-          "answered": "",
-          "status": ""
-        }
-      }
-    ],
-    "quizzes": [
-      {
-        "id": "",
-        "category_id": "",
-        "question": "",
-        "options": [
-          { "label": "", "text": "" },
-          { "label": "", "text": "" },
-          { "label": "", "text": "" },
-          { "label": "", "text": "" }
-        ],
-        "answer_index": null,
-        "explanation": ""
-      }
-    ],
-    "results": [
-      {
-        "quiz_id": "",
-        "category_title": "",
-        "score": "",
-        "total": "",
-        "status": "",
-        "date": ""
-      }
-    ]
+    "categories": [],
+    "quizzes": [],
+    "results": []
   },
 
   "working": {
     "kanban": {
-      "todo": [
-        { "id": "", "title": "", "tags": [] }
-      ],
-      "in_progress": [
-        { "id": "", "title": "", "tags": [] }
-      ],
-      "done": [
-        { "id": "", "title": "", "tags": [] }
-      ]
+      "todo": [],
+      "in_progress": [],
+      "done": []
     },
-    "logs": [
-      {
-        "time": "",
-        "entry": ""
-      }
-    ],
-    "reading_list": [
-      {
-        "id": "",
-        "title": "",
-        "url": "",
-        "status": ""
-      }
-    ]
+    "logs": [],
+    "reading_list": []
   },
 
   "admin": {
     "settings": {
-      "site_title": "",
-      "email": "",
-      "bio": "",
+      "site_title": "Hasitha Sandakelum",
+      "email": "dev.sandakelum@gmail.com",
+      "bio": "Full-Stack Dev & AI Builder | Next.js · TypeScript · Firebase | BICT Undergrad @ Ruhuna",
       "dark_mode": false,
       "maintenance_mode": false,
       "show_blog": true,
@@ -230,9 +183,19 @@
   "footer": {
     "columns": [
       {
-        "heading": "",
+        "heading": "Links",
         "links": [
-          { "label": "", "url": "" }
+          { "label": "GitHub", "url": "https://github.com/dev-sandakelum/" },
+          { "label": "LinkedIn", "url": "https://www.linkedin.com/in/hasitha-sandakelum/" },
+          { "label": "YouTube", "url": "https://www.youtube.com/@hasitha_sandakelum" },
+          { "label": "TikTok", "url": "https://www.tiktok.com/@hasitha_san_" },
+          { "label": "WhatsApp Channel", "url": "https://whatsapp.com/channel/0029VbCDy0fCxoAr9HjWEG1r" }
+        ]
+      },
+      {
+        "heading": "Contact",
+        "links": [
+          { "label": "dev.sandakelum@gmail.com", "url": "mailto:dev.sandakelum@gmail.com" }
         ]
       }
     ]

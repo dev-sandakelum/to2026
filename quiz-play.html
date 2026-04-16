@@ -200,6 +200,7 @@
 
 <script src="js/main.js"></script>
 <script src="js/settings.js"></script>
+<script src="js/auth.js"></script>
 <script>
 const quizData = [
   { q: '[ Question 1: Placeholder question text goes here? ]', opts: ['[ Option A ]', '[ Option B ]', '[ Option C ]', '[ Option D ]'], answer: 0 },
@@ -358,6 +359,10 @@ skipBtn.addEventListener('click', () => {
 
 function showResults() {
   document.querySelector('.quiz-play-layout').style.display = 'none';
+  if (window.Auth && window.Auth.isLoggedIn()) {
+    const u = window.Auth.user;
+    console.log('Progress saved for', u.name);
+  }
   results.style.display = 'block';
   const total = quizData.length;
   const pct = Math.round((score.correct / total) * 100);
@@ -382,7 +387,10 @@ function restartQuiz() {
   loadQuestion();
 }
 
-document.getElementById('restart-btn').addEventListener('click', restartQuiz);
+document.getElementById('restart-btn').addEventListener('click', () => {
+  if (window.requireAuthForQuiz && !window.requireAuthForQuiz('restart')) return;
+  restartQuiz();
+});
 document.getElementById('results-restart').addEventListener('click', restartQuiz);
 
 // init
