@@ -693,15 +693,32 @@ main {
   grid-template-columns: 240px 1fr;
   gap: 24px;
 }
+
 .note-sidebar {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 20px;
-  height: fit-content;
-  position: sticky;
-  top: 76px;
+  /* Fixed to the viewport — always visible while scrolling */
+  position: fixed;
+  top: 76px;                          /* clears the 64px navbar + 12px gap */
+  left: max(16px, calc((100vw - 1200px) / 2 + 28px)); /* aligns with main's left edge */
+  width: 220px;
+  max-height: calc(100vh - 96px);     /* never taller than the viewport */
+  overflow-y: auto;
   box-shadow: var(--shadow-sm);
+  z-index: 10;
+  /* thin scrollbar inside sidebar */
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+.note-sidebar::-webkit-scrollbar       { width: 4px; }
+.note-sidebar::-webkit-scrollbar-track { background: transparent; }
+.note-sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
+
+/* Push the content column right so it doesn't sit under the fixed sidebar */
+.note-content {
+  margin-left: 244px;   /* sidebar width (220) + gap (24) */
 }
 .note-sidebar h4 {
   font-size: 10px;
@@ -1422,6 +1439,8 @@ main {
   .toc-fab    { display: flex; }
   .note-sidebar { display: none; }
   .note-layout  { grid-template-columns: 1fr; }
+  /* Reset the margin-left offset when sidebar is hidden */
+  .note-content { margin-left: 0; }
 }
 
 @media (max-width: 540px) {

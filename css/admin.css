@@ -13,7 +13,8 @@
 /* Shell = full-width row below navbar */
 .admin-shell {
   display: flex;
-  min-height: calc(100vh - 60px);
+  height: calc(100vh - 64px);         /* exactly fills the space below the navbar */
+  overflow: hidden;                    /* children handle their own scroll */
   position: relative;
 }
 
@@ -132,6 +133,8 @@
   padding: 0;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;                    /* content area scrolls independently */
+  height: calc(100vh - 64px);         /* full viewport minus navbar */
 }
 
 /* Mobile top bar (hidden on desktop) */
@@ -325,8 +328,8 @@
   /* Show mobile topbar */
   .admin-topbar { display: flex; }
 
-  /* Content full width */
-  .admin-content { width: 100%; }
+  /* Content full width — keep scroll height correct on mobile */
+  .admin-content { width: 100%; height: calc(100vh - 64px); }
 
   .admin-section { padding: 20px 16px; }
 
