@@ -66,6 +66,15 @@ include 'components/head.php';
         </div>
       </div>
 
+      <div class="card">
+        <div class="card-body" style="text-align:center;">
+          <div style="font-size:32px;margin-bottom:10px;">📍</div>
+          <div class="card-title">Tracker</div>
+          <p class="card-text">Interactive map with live tracker points. Add, remove, and focus on locations in real time.</p>
+          <a href="tracker.php"><button class="btn sm primary">Open App</button></a>
+        </div>
+      </div>
+
     </div>
   </section>
 </main>
